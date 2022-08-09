@@ -1,0 +1,40 @@
+/*Challenge link:https://www.codewars.com/kata/53369039d7ab3ac506000467/train/csharp
+Question:Complete the method that takes a boolean value and return a "Yes" string for true, or a "No" string for false.
+/*
+
+//***************Solution********************
+using System;
+using System.Linq;
+
+//check the the variable "word", if the value is true, return "Yes", if value the is false, return "No".
+//Then simiplfied into one line by using an Enumerable methods.
+public static class Kata
+{
+  public static string boolToWord(bool word) => word ? "Yes" : "No";
+}
+
+//****************Sample Test*****************
+using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class  boolToWordTest {
+
+  [Test]
+  public void boolToWordReturned1() {
+    Assert.AreEqual("Yes", Kata.boolToWord(true));
+    Console.WriteLine("Expected Yes");
+  }
+
+  [Test]
+  public void boolToWordReturned2() {
+    Assert.AreEqual("No", Kata.boolToWord(false));
+    Console.WriteLine("Expected No");
+  }
+
+  [Test]
+  public void boolToWordReturned3() {
+    Assert.AreEqual("Yes", Kata.boolToWord(true));
+    Console.WriteLine("Expected Yes");
+  }
+}
