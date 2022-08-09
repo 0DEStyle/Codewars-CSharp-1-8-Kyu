@@ -1,4 +1,4 @@
-# Codewars-
+# Codewars Challenges-
 C# Solutions
 
 This is a repository for Codewars C# challenge solutions.
