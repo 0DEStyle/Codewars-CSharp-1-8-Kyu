@@ -22,7 +22,12 @@ public static class Kata
   public static int MakeNegative(int number) => number <=0 ? number : number *-1;
 }
 
-
+//second solution
+//negative times the abolute of the argument number.
+public static class Kata
+{
+  public static int MakeNegative(int number) => -Math.Abs(number);
+}
 
 
 
