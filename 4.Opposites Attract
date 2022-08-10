@@ -1,0 +1,54 @@
+
+/*Challenge link:https://www.codewars.com/kata/555086d53eac039a2a000083/train/csharp
+Question:
+Timmy & Sarah think they are in love, but around where they live, they will only know once they pick a flower each.
+If one of the flowers has an even number of petals and the other has an odd number of petals it means they are in love.
+Write a function that will take the number of petals of each flower and return true if they are in love and false if they aren't.
+/*
+
+
+
+//***************Solution********************
+
+//return a boolean value if flower1 modulus 2 is not equal to flower2 modulus 2(a standard way to find odd and even number),
+//in other words, return true if odd is not equal to even, or even is not equal to odd.
+//Then simiplfied into one line by using an Enumerable methods.
+public class LoveDetector
+{
+    public static bool lovefunc(int flower1, int flower2) => flower1 % 2 != flower2 % 2;
+}
+
+
+
+
+
+//****************Sample Test*****************
+using NUnit.Framework;
+  using System;
+  [TestFixture]
+  public class LoveTests
+  { 
+    [Test]
+    public void Test1()
+    {
+      Assert.AreEqual(true, LoveDetector.lovefunc(1,4));
+    }
+
+    [Test]
+    public void Test2()
+    {
+      Assert.AreEqual(false, LoveDetector.lovefunc(2,2));
+    }
+
+    [Test]
+    public void Test3()
+    {
+     Assert.AreEqual(true, LoveDetector.lovefunc(0,1));
+    }
+
+    [Test]
+    public void Test4()
+    {
+      Assert.AreEqual(false, LoveDetector.lovefunc(0,0));
+    }
+}
