@@ -1,0 +1,70 @@
+/*Challenge link: https://www.codewars.com/kata/555eded1ad94b00403000071/train/csharp
+Question:
+Task:
+Your task is to write a function which returns the sum of following series upto nth term(parameter).
+
+Series: 1 + 1/4 + 1/7 + 1/10 + 1/13 + 1/16 +...
+Rules:
+You need to round the answer to 2 decimal places and return it as String.
+
+If the given value is 0 then it should return 0.00
+
+You will only be given Natural Numbers as arguments.
+
+Examples:(Input --> Output)
+1 --> 1 --> "1.00"
+2 --> 1 + 1/4 --> "1.25"
+5 --> 1 + 1/4 + 1/7 + 1/10 + 1/13 --> "1.57"
+
+
+/*
+
+//***************Solution********************
+Solution 1:
+
+using System;
+public class NthSeries {
+  
+ //formula is 1/3n-2, then format the ans to 2 decimal place, then into string.
+  public static string seriesSum (int n) {
+    double ans = 0;
+    for (int i = 1; i <=n; i++){
+      ans += 1/((double)(3*i)-2);
+      }
+      return String.Format("{0:0.00}", ans);
+    }
+}
+
+Solution 2:
+
+using System.Linq;
+
+//formula is 1/3n-2
+//Using Enumerable.range to create a loop, get the sum of the input formula
+//format the answer to 2 decimal place using F(Standard format specifiers)
+//Then simiplfied into one line by using an Enumerable methods.
+public class NthSeries {
+  public static string seriesSum (int n) => Enumerable.Range(1,n).Sum(x => 1.0/((3*x)-2)).ToString("F");
+}
+
+
+
+
+
+//****************Sample Test*****************
+using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class NthSeriesTests {
+
+[Test]
+  public void Test1() {
+    Assert.AreEqual("0.00", NthSeries.seriesSum(0));
+  }
+[Test]
+  public void Test2() {
+    Assert.AreEqual("1.77", NthSeries.seriesSum(9));
+  }
+  
+}
