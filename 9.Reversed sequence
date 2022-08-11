@@ -1,0 +1,83 @@
+/*Challenge link:https://www.codewars.com/kata/5a00e05cc374cb34d100000d/train/csharp
+Question:
+Build a function that returns an array of integers from n to 1 where n>0.
+
+Example : n=5 --> [5,4,3,2,1]
+
+/*
+
+
+
+//***************Solution********************
+Solution 1:
+
+using System.Linq;
+
+//Set starting point from 1, count up to n (no zero)
+//Reverse the elements in the array
+//Add elements in to the array.
+public static class Kata
+{
+  public static int[] ReverseSeq(int n) => Enumerable.Range(1,n).Reverse().ToArray();
+}
+
+Solution 2:
+
+using System;
+using System.Collections.Generic; //Using Link
+
+public static class Kata
+{
+  public static int[] ReverseSeq(int n)
+  {
+  
+  //Create a link and append numbers backward.
+  //then covert the link into array.
+    var list = new List<int>();
+    for(int i = n; i > 0; i--)
+      list.Add(i);
+    return list.ToArray();
+  }
+}
+
+
+//****************Sample Test*****************
+
+namespace Solution 
+{
+  using NUnit.Framework;
+  using System;
+  using System.Linq;
+
+  [TestFixture]
+  public class SolutionTest
+  {
+    [Test]
+    public void SampleTest()
+    {
+      Assert.That(Kata.ReverseSeq(5), Is.EqualTo(new int[] {5,4,3,2,1}));
+    }
+    [Test]
+    public void BasicTest()
+    {
+      Assert.That(Kata.ReverseSeq(6), Is.EqualTo(new int[] {6,5,4,3,2,1}));
+      Assert.That(Kata.ReverseSeq(100), Is.EqualTo(Enumerable.Range(1, 100).Reverse().ToArray()));
+      Assert.That(Kata.ReverseSeq(10000), Is.EqualTo(Enumerable.Range(1, 10000).Reverse().ToArray()));
+      Assert.That(Kata.ReverseSeq(100000), Is.EqualTo(Enumerable.Range(1, 100000).Reverse().ToArray()));
+      Assert.That(Kata.ReverseSeq(1000000), Is.EqualTo(Enumerable.Range(1, 1000000).Reverse().ToArray()));
+    }
+    
+    [Test]
+    public void RandomTest() 
+    {
+      Random rnd = new Random();
+      
+      for (int i = 0; i < 100; ++i)
+      {
+        int n = rnd.Next(2, 10000);
+        
+        Assert.That(Kata.ReverseSeq(n), Is.EqualTo(Enumerable.Range(1, n).Reverse().ToArray()));
+      }
+    }
+  }
+}
