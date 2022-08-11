@@ -3,12 +3,17 @@ C# Solutions
 
 This is a repository for Codewars C# challenge solutions.
 
-You can find Challenge Link and question at the start,
+You can find challenge link and question at the start,
 then solutions in the middle and test cases at the very end.
 
 All solutions are programmed by ODEStyle.
 Some solutions include System.Linq, for convenient class methods.
+
+Link to Linq doc: https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=net-6.0
+
 Link to Codewars Profile: https://www.codewars.com/users/0DE
+
+
 
 
 What is Codewars?
