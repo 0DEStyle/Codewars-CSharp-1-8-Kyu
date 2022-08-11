@@ -15,8 +15,8 @@ using System.Linq;
 
 //Set starting point from 1, count up to n (no zero)
 //Reverse the elements in the array
-//Then Add elements in to the array.
-//Simiplfied into one line by using an Enumerable methods.
+//Then add elements into the array.
+//Finally, simiplfied into one line by using an Enumerable methods.
 public static class Kata
 {
   public static int[] ReverseSeq(int n) => Enumerable.Range(1,n).Reverse().ToArray();
