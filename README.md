@@ -2,7 +2,12 @@
 C# Solutions
 
 This is a repository for Codewars C# challenge solutions.
+
+You can find Challenge Link and question at the start,
+then solutions in the middle and test cases at the very end.
+
 All solutions are programmed by ODEStyle.
+Some solutions include System.Linq, for convenient class methods.
 
 
 What is Codewars?
