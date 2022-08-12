@@ -1,0 +1,77 @@
+/*Challenge link: https://www.codewars.com/kata/52fba66badcd10859f00097e/train/csharp
+Question:
+Trolls are attacking your comment section!
+
+A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+
+Your task is to write a function that takes a string and return a new string with all vowels removed.
+
+For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+Note: for this kata y isn't considered a vowel.
+
+
+/*
+
+
+
+
+
+
+//***************Solution********************
+Solution 1
+//replace all the vowels by using replace method.
+using System;
+public static class Kata
+{
+    public static string Disemvowel(string str)
+      {
+      var charsToRemove = new string []{"a","e","i","o","u","A","E","I","O","U"};
+      foreach(var c in charsToRemove){
+        str = str.Replace(c,string.Empty);
+      }
+      return str;
+    }
+}
+
+Solution 2
+//This solution will use System.Text.RegularExpressions library
+using System.Text.RegularExpressions;
+
+//in string str, replace all vowels to empty string and ignore its case.
+public static class Kata
+{
+    public static string Disemvowel(string str) => Regex.Replace(str,"[aeuoi]",string.Empty,RegexOptions.IgnoreCase);
+}
+
+
+
+
+
+
+//****************Sample Test*****************
+
+using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class DisemvowelTest
+{
+    [Test]
+    public void ShouldRemoveAllVowels()
+    {
+        Assert.AreEqual("Ths wbst s fr lsrs LL!", Kata.Disemvowel("This website is for losers LOL!"));
+    }
+    
+    [Test]
+    public void MultilineString()
+    {
+        Assert.AreEqual("N ffns bt,\nYr wrtng s mng th wrst 'v vr rd", Kata.Disemvowel("No offense but,\nYour writing is among the worst I've ever read"));
+    }
+  
+    [Test]
+    public void OneMoreForGoodMeasure()
+    {
+        Assert.AreEqual("Wht r y,  cmmnst?", Kata.Disemvowel("What are you, a communist?"));
+    }
+}
