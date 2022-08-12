@@ -13,7 +13,6 @@ Example(Input => Output):
 //***************Solution********************
 using System;
 using System.Linq;
-using System.Collections.Generic;
 
 //convert n into string, then reverse it
 //select the first letter(as so on), convert it back to long(int64)
