@@ -1,0 +1,47 @@
+/*Challenge link: https://www.codewars.com/kata/5583090cbe83f4fd8c000051/train/csharp
+Question:
+Convert number to reversed array of digits
+Given a random non-negative number, you have to return the digits of this number within an array in reverse order.
+
+Example(Input => Output):
+348597 => [7,9,5,8,4,3]
+0 => [0]
+
+
+/*
+
+//***************Solution********************
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+//convert n into string, then reverse it
+//select the first letter(as so on), convert it back to long(int64)
+//pass it back into the array and return the result.
+//note: range() won't work here, because it only support int, not long.
+namespace Solution
+{
+  class Digitizer
+  {
+    public static long[] Digitize(long n) => n.ToString().Reverse().Select(x=> Convert.ToInt64(x.ToString())).ToArray();
+  }
+}
+
+//****************Sample Test*****************
+
+using System;
+using NUnit.Framework;
+
+namespace Solution
+{
+  [TestFixture]
+  public class SolutionTest
+  {
+    [Test]
+    public void MyTest()
+    {
+      Assert.AreEqual(new long[] { 1, 3, 2, 5, 3 }, Digitizer.Digitize(35231));
+      Assert.AreEqual(new long[] { 0 }, Digitizer.Digitize(0));
+    }
+  }
+}
