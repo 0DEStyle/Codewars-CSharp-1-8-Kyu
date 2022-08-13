@@ -17,6 +17,7 @@ using System.Linq;
 
 //Check whether each character is digit in the string 'pin', then check wheter the string length is 6 or 4.
 //if all conditions met, return true, else false.
+//Then simiplfied into one line by using an Enumerable methods.
 public class Kata
 {
   public static bool ValidatePin(string pin) => pin.All(char.IsDigit) && (pin.Length == 6 || pin.Length == 4) ? true : false;
