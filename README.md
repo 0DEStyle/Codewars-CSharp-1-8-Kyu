@@ -1,7 +1,10 @@
 # Codewars Challenges-
 C# Solutions
 
-This is a repository for Codewars C# challenge solutions.
+This is a repository for Codewars C# challenge solutions. 
+Versions 8.0 (.Net Core 3.1) 
+Test Frameworks NUnit
+
 
 You can find challenge link and question at the start,
 then solutions in the middle and test cases at the very end.
