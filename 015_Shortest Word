@@ -1,0 +1,47 @@
+/*Challenge link: https://www.codewars.com/kata/57cebe1dc6fdc20c57000ac9/train/csharp
+Question:
+Simple, given a string of words, return the length of the shortest word(s).
+
+String will never be empty and you do not need to account for different data types.
+
+
+/*
+
+
+
+//***************Solution********************
+
+using System.Linq;
+
+//Min<TSource>(IEnumerable<TSource>, Func<TSource,Single>)
+//Split to separate the words
+//Find and return the minimum length of each word
+//Then simiplfied into one line by using an Enumerable methods.
+public class Kata
+{
+  public static int FindShort(string s) => s.Split(' ').Min(shortWord => shortWord.Length);
+}
+
+
+
+
+
+//****************Sample Test*****************
+
+namespace Solution 
+{
+  using NUnit.Framework;
+  using System;  
+
+  [TestFixture]
+  public class KataTests
+  {
+    [Test]
+    public void BasicTests()
+    {
+      Assert.AreEqual(3, Kata.FindShort("bitcoin take over the world maybe who knows perhaps"));
+      Assert.AreEqual(3, Kata.FindShort("turns out random test cases are easier than writing out basic ones"));      
+      Assert.AreEqual(2, Kata.FindShort("Let's travel abroad shall we"));
+    }
+  }
+}
