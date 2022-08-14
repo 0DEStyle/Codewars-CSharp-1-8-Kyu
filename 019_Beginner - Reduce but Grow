@@ -1,0 +1,37 @@
+/*Challenge link: https://www.codewars.com/kata/57f780909f7e8e3183000078/train/csharp
+Question:
+Given a non-empty array of integers, return the result of multiplying the values together in order. Example:
+
+[1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
+
+/*
+
+//***************Solution********************
+
+//Using Aggregate to multiply each element together.
+//Then simiplfied into one line by using an Enumerable methods.
+using System.Linq;
+public class Kata
+{
+  public static int Grow(int[] x) => x.Aggregate((a,b)=> a*b);
+}
+
+
+//****************Sample Test*****************
+
+namespace Solution {
+  using NUnit.Framework;
+  using System;
+
+  [TestFixture]
+  public class KataTests
+  {
+    [Test]
+    public void BasicTests()
+    {
+      Assert.AreEqual(6, Kata.Grow(new [] { 1, 2, 3 }));
+      Assert.AreEqual(16, Kata.Grow(new [] { 4, 1, 1, 1, 4 }));
+      Assert.AreEqual(64, Kata.Grow(new [] { 2, 2, 2, 2, 2, 2 }));
+    }
+  }
+}
