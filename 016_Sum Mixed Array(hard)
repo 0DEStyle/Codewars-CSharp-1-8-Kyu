@@ -1,0 +1,44 @@
+/*Challenge link:https://www.codewars.com/kata/57eaeb9578748ff92a000009/train/csharp
+Question:
+Given an array of integers as strings and numbers, return the sum of the array values as if all were numbers.
+
+Return your answer as a number.
+
+
+/*
+
+
+
+//***************Solution********************
+
+using System;
+using System.Linq;
+
+//Convert each element inside the object into integer, and get the sum of it.
+//Then simiplfied into one line by using an Enumerable methods.
+public class Kata
+{
+  public static int SumMix(object[] x) => x.Sum(Convert.ToInt32);
+}
+
+
+
+
+
+//****************Sample Test*****************
+namespace Solution {
+  using NUnit.Framework;
+  using System;
+
+  [TestFixture]
+  public class SolutionTest
+  {
+    [Test]
+    public void SampleTest()
+    {
+      Assert.AreEqual(22, Kata.SumMix(new object[] {9, 3, "7", "3"}));
+      Assert.AreEqual(42, Kata.SumMix(new object[] {"5", "0", 9, 3, 2, 1, "9", 6, 7})); 
+      Assert.AreEqual(41, Kata.SumMix(new object[] {"3", 6, 6, 0, "5", 8, 5, "6", 2, "0"}));
+    }
+  }
+}
