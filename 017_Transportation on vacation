@@ -1,0 +1,61 @@
+/*Challenge link:https://www.codewars.com/kata/568d0dd208ee69389d000016/train/csharp
+Question:
+After a hard quarter in the office you decide to get some rest on a vacation. So you will book a flight for you and your girlfriend and try to leave all the mess behind you.
+
+You will need a rental car in order for you to get around in your vacation. The manager of the car rental makes you some good offers.
+
+Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+
+Write a code that gives out the total amount for different days(d).
+
+
+
+
+/*
+
+//***************Solution********************
+
+Solution 1:
+
+//Multiple condition Ternery
+//if day is less than 3, multiply by 40
+//if day is greater than 2 but less than 7, multiply by 40 then subtract 20
+//if day is greater than 7, multiply by 40 then subtract 50
+//Then simiplfied into one line by using an Enumerable methods.
+public class RentalCar {
+    
+    public static int RentalCarCost(int d) => d < 3 ? d*40 : (d > 2 && d <7 ? (d*40)-20 : (d * 40) - 50);
+}
+
+Solution 2:
+
+//Same as above, but simplifed the structure.
+public class RentalCar {    
+    public static int RentalCarCost(int d) => d * 40 - (d > 6 ? 50 : d > 2 ? 20 : 0);
+}
+
+
+
+
+
+//****************Sample Test*****************
+using System;
+using NUnit.Framework;
+
+[TestFixture]
+public static class RentalCarTests 
+{
+
+    private static void testing(int actual, int expected) 
+    {
+        Assert.AreEqual(expected, actual);
+    }
+   
+[Test]
+    public static void test1() 
+    {        
+        testing(RentalCar.RentalCarCost(1),40);
+        testing(RentalCar.RentalCarCost(3),100);
+        testing(RentalCar.RentalCarCost(7),230);
+    }
+}
