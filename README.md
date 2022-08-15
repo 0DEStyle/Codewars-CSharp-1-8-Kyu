@@ -1,29 +1,29 @@
 # Codewars Challenges-
-C# Solutions
+## C# Solutions
 
 ⭐This is a repository for Codewars C# challenge solutions. 
 Versions 8.0 (.Net Core 3.1) 
-Test Frameworks NUnit
+Test Frameworks NUnit <br />
 
-⭐All solutions are programmed by ODEStyle, excluded unit test.
-Link to Codewars Profile: https://www.codewars.com/users/0DE
+⭐All solutions are programmed by ODEStyle, excluded Unit test.
+Link to Codewars Profile: https://www.codewars.com/users/0DE <br />
 
-⭐You can find challenge link and question at the start,
-then solutions in the middle and test cases at the very end.
+⭐You can find challenge link and question at the start of the file,
+then solutions in the middle and test cases at the very end. <br />
 
 ⭐ Common Class Libraries:
 System.Linq
 NUnit.Framework
 System.Collections.Generic
 System.Text.RegularExpressions
-System.Globalization
+System.Globalization <br />
 
 
-⭐Links
-Linq doc: https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=net-6.0
-RegularExpressions doc: https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions?view=net-6.0
-Collections doc: https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-6.0
-.NET API: https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0
+## Documentation Links
+1.Linq: https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=net-6.0 <br />
+2.RegularExpressions: https://docs.microsoft.com/en-us/dotnet/api/system.text.regularexpressions?view=net-6.0 <br />
+3.Collections: https://docs.microsoft.com/en-us/dotnet/api/system.collections.generic?view=net-6.0 <br />
+4.Dot NET API: https://docs.microsoft.com/en-us/dotnet/api/?view=net-6.0 <br />
 
 
 
