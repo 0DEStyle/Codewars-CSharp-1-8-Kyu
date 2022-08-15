@@ -1,0 +1,75 @@
+/*Challenge link: https://www.codewars.com/kata/515de9ae9dcfc28eb6000001/train/csharp
+Question:
+Complete the solution so that it splits the string into pairs of two characters. If the string contains an odd number of characters then it should replace the missing second character of the final pair with an underscore ('_').
+
+Examples:
+
+* 'abc' =>  ['ab', 'c_']
+* 'abcdef' => ['ab', 'cd', 'ef']
+
+
+/*
+
+//***************Solution********************
+Solution 1
+
+using System;
+using System.Collections.Generic;
+
+public class SplitString
+{
+  public static string[] Solution(string str)
+  {
+    //if length of the str is odd, append "_"
+        if (str.Length % 2 == 1)
+            str += "_";
+
+        List<string> list = new List<string>();
+
+        //e.g., "abc_" length is 4, repeat only 2 times.
+        for (int i = 0; i < str.Length; i += 2)
+            //append 'a' to 'b', convert the set to string and add to the list
+            list.Add(str[i] + str[i + 1].ToString());
+
+        //return the list as array
+        return list.ToArray();
+  }
+}
+
+Solution 2
+
+using System.Text.RegularExpressions;
+using System.Linq;
+
+        //append "_" to the string "str"
+        //@ Verbatim string literals, allow the use of backslash
+        //\w{2} or ".." find matches of any word character with string length of 2
+
+        //select start from the first element, and loop each value
+        //convert string into array and return the result.
+
+public class SplitString
+{
+  public static string[] Solution(string str) => Regex.Matches(str + "_","..").Select(x=>x.Value).ToArray();
+  //second way
+//public static string[] Solution(string str) => Regex.Matches(str + "_",@"\w{2}").Select(x=>x.Value).ToArray();
+}
+
+//****************Sample Test*****************
+
+namespace Solution 
+{
+  using NUnit.Framework;
+  using System;  
+
+  [TestFixture]
+  public class SplitStringTests
+  {
+    [Test]
+    public void BasicTests()
+    {
+      Assert.AreEqual(new string[] { "ab", "c_" }, SplitString.Solution("abc"));
+      Assert.AreEqual(new string[] { "ab", "cd", "ef" }, SplitString.Solution("abcdef"));
+    }
+  }
+}
