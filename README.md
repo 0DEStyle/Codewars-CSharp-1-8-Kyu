@@ -11,12 +11,12 @@ Link to Codewars Profile: https://www.codewars.com/users/0DE <br />
 ⭐You can find challenge link and question at the start of the file,
 then solutions in the middle and test cases at the very end. <br />
 
-⭐ Common Class Libraries:
-System.Linq
-NUnit.Framework
-System.Collections.Generic
-System.Text.RegularExpressions
+## Commonly used Class Libraries:
+System.Linq <br />
+System.Collections.Generic <br />
+System.Text.RegularExpressions <br />
 System.Globalization <br />
+NUnit.Framework <br />
 
 
 ## Documentation Links
