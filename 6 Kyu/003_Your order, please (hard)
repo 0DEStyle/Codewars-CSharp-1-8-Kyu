@@ -1,0 +1,87 @@
+/*Challenge link:https://www.codewars.com/kata/55c45be3b2079eccff00010f/train/csharp
+Question:
+Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+
+If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+
+Examples
+"is2 Thi1s T4est 3a"  -->  "Thi1s is2 3a T4est"
+"4of Fo1r pe6ople g3ood th5e the2"  -->  "Fo1r the2 g3ood 4of th5e pe6ople"
+""  -->  ""
+
+/*
+
+//***************Solution********************
+
+
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+
+        //1.Split the words with ' '
+        //2.Find the number in string if it match the requirement as a decimal digit
+        //3.Sort the sequence in ascending order.
+        //4.Join the words together with " " and return as a string.
+        //5.Then simiplfied into one line by using an Enumerable methods.
+public static class Kata
+{
+  public static string Order(string words) => string.Join(" ", words.Split(' ').OrderBy(x => Regex.Match(x,@"\d+").Value));
+}
+
+//****************Sample Test*****************
+
+namespace Solution 
+{
+  using NUnit.Framework;
+  using System;
+  using System.Linq;
+  using System.Text.RegularExpressions;
+  
+  public static class Solution
+  {
+    public static string Order(string words) =>
+      words == String.Empty ? "" : String.Join(" ", words.Split(' ').OrderBy(w => Int32.Parse(new Regex(@"\d").Match(w).Value)));
+  }
+
+  [TestFixture]
+  public class SolutionTest
+  {
+    [Test, Description("Sample Tests")]
+    public void SampleTest()
+    {
+      Assert.AreEqual("Thi1s is2 3a T4est", Kata.Order("is2 Thi1s T4est 3a"));
+      Assert.AreEqual("Fo1r the2 g3ood 4of th5e pe6ople", Kata.Order("4of Fo1r pe6ople g3ood th5e the2"));
+      Assert.AreEqual("", Kata.Order(""));
+    }
+
+    [Test, Description("Extra Tests")]
+    public void ExtraTest()
+    {
+      Assert.AreEqual("wha1t sh2all 3we d4o w5ith a6 dru7nken s8ailor", Kata.Order("d4o dru7nken sh2all w5ith s8ailor wha1t 3we a6"));
+      Assert.AreEqual("1 2 3 4 5 6 7 8 9", Kata.Order("3 6 4 2 8 7 5 1 9"));
+    }
+    
+    private static string[] names = new string[] {"Alice", "Bob", "Cindy", "Ernst", "Fiona", "Greg", "Heidi", "Igor", "Jamila"};
+    
+    [Test, Description("Random Tests")]
+    public void RandomTest()
+    {
+      const int Tests = 100;
+      Random rnd = new Random();
+      
+      for (int i = 0; i < Tests; ++i)
+      {
+        names = names.OrderBy(_ => rnd.Next()).ToArray();
+        string words = String.Join(" ", new string[rnd.Next(0, 9)].Select((_, idx) => names[idx][0] + (idx + 1).ToString() + names[idx].Substring(1)));
+        
+        string expected = Solution.Order(words);
+        string actual = Kata.Order(words);
+        
+        Assert.AreEqual(expected, actual);
+      }
+    }
+  }
+}
