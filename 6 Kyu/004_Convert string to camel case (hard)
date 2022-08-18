@@ -15,14 +15,16 @@ Examples
 using System;
 using System.Text.RegularExpressions;
 
+//https://stackoverflow.com/questions/16576983/replace-multiple-characters-in-one-replace-call
 //if any character in the string "str" matches '_' or '-'
 //replace '_' or '-' and the first letter of word to to upper case.
 //@ is verbatim string literal, ignore forward slash.
 //Then simiplfied into one line by using an Enumerable methods.
 
+//https://stackoverflow.com/questions/6375873/regular-expression-groups-in-c-sharp
 //m.Group[0] is always the same as m.Value
 //m.Group[1] is the group of captures from the [_-]
-//https://stackoverflow.com/questions/6375873/regular-expression-groups-in-c-sharp
+
 public class Kata
 {
   public static string ToCamelCase(string str) => Regex.Replace(str, @"[_-](\w)", m => m.Groups[1].Value.ToUpper());
