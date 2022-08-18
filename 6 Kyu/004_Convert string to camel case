@@ -1,0 +1,78 @@
+/*Challenge link:https://www.codewars.com/kata/517abf86da9663f1d2000003/train/csharp
+Question:
+Complete the method/function so that it converts dash/underscore delimited words into camel casing. The first word within the output should be capitalized only if the original word was capitalized (known as Upper Camel Case, also often referred to as Pascal case).
+
+Examples
+"the-stealth-warrior" gets converted to "theStealthWarrior"
+"The_Stealth_Warrior" gets converted to "TheStealthWarrior"
+
+
+
+/*
+
+//***************Solution********************
+
+using System;
+using System.Text.RegularExpressions;
+
+//if any character in the string "str" matches '_' or '-'
+//replace '_' or '-' and the first letter of word to to upper case.
+//@ is verbatim string literal, ignore forward slash.
+//Then simiplfied into one line by using an Enumerable methods.
+
+//m.Group[0] is always the same as m.Value
+//m.Group[1] is the group of captures from the [_-]
+//https://stackoverflow.com/questions/6375873/regular-expression-groups-in-c-sharp
+public class Kata
+{
+  public static string ToCamelCase(string str) => Regex.Replace(str, @"[_-](\w)", m => m.Groups[1].Value.ToUpper());
+}
+
+//****************Sample Test*****************
+
+using System;
+using System.Text.RegularExpressions;
+using System.Collections.Generic;
+using System.Linq;
+using NUnit.Framework;
+
+[TestFixture]
+public class KataTest
+{
+  public string Solution(string str)
+  {
+    return Regex.Replace(str, @"[_-](\w)", m => m.Groups[1].Value.ToUpper());
+  }
+  
+  [Test]
+  public void KataTests()
+  {
+    Assert.AreEqual("theStealthWarrior", Kata.ToCamelCase("the_stealth_warrior"), "Kata.ToCamelCase('the_stealth_warrior') did not return correct value");
+    Assert.AreEqual("TheStealthWarrior", Kata.ToCamelCase("The-Stealth-Warrior"), "Kata.ToCamelCase('The-Stealth-Warrior') did not return correct value");
+  }
+  
+  [Test]
+  public void SimpleTests()
+  {
+    Assert.AreEqual("", Kata.ToCamelCase(""), "An empty string was provided but not returned");
+    Assert.AreEqual("ABC", Kata.ToCamelCase("A-B-C"), "Kata.ToCamelCase('A-B-C') did not return correct value");
+  }
+  
+  [Test]
+  public void RandomTests()
+  {
+    var random = new Random();
+    string randomStr;
+    for (int i = 0; i < 10; i++)
+    {
+      randomStr = 
+        String.Join("", Enumerable.Range(0, 10).Select(o => (char)random.Next('a', 'z')))
+        + "_"
+        + String.Join("", Enumerable.Range(0, 10).Select(o => (char)random.Next('a', 'z')))
+        + "-"
+        + String.Join("", Enumerable.Range(0, 10).Select(o => (char)random.Next('a', 'z')));
+
+      Assert.AreEqual(Solution(randomStr), Kata.ToCamelCase(randomStr));
+    }
+  }
+}
