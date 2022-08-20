@@ -1,0 +1,85 @@
+/*Challenge link:https://www.codewars.com/kata/54e6533c92449cc251001667/train/csharp
+Question:
+Implement the function unique_in_order which takes as argument a sequence and returns a list of items without any elements with the same value next to each other and preserving the original order of elements.
+
+For example:
+
+uniqueInOrder("AAAABBBCCDAABBB") == {'A', 'B', 'C', 'D', 'A', 'B'}
+uniqueInOrder("ABBCcAD")         == {'A', 'B', 'C', 'c', 'A', 'D'}
+uniqueInOrder([1,2,2,3,3])       == {1,2,3}
+
+/*
+
+//***************Solution********************
+
+// Reference
+// https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable.where?view=net-6.0#system-linq-enumerable-where-1(system-collections-generic-ienumerable((-0))-system-func((-0-system-int32-system-boolean)))
+// "Where" filters a sequence of values based on predicate
+//  Where<TSource>(IEnumerable<TSource>, Func<TSource,Int32,Boolean>) 
+// (x, i) 
+// x is the element, i is the index of element
+// if i equals 0 
+// or
+// x not equals to the elements at last index (i -1).
+// return the result "iterable".
+// Then simiplfied into one line by using an Enumerable methods.
+
+using System.Collections.Generic;
+using System.Linq;
+
+public static class Kata
+{
+  public static IEnumerable<T> UniqueInOrder<T>(IEnumerable<T> iterable) => iterable.Where((x, i) => i == 0 || !Equals(x, iterable.ElementAt(i-1)));
+}
+
+//****************Sample Test*****************
+
+namespace Solution 
+{
+  using NUnit.Framework;
+  using System;
+  using System.Collections.Generic;
+  
+  [TestFixture]
+  public class SolutionTest
+  {
+    [Test]
+    public void EmptyTest()
+    {
+      Assert.AreEqual("", Kata.UniqueInOrder(""));
+    }
+    [Test]
+    public void ListTest()
+    {
+      Assert.AreEqual(new List<int> {1, 2, 3}, Kata.UniqueInOrder(new List<int> {1, 2, 3, 3}));
+      Assert.AreEqual(new List<double> {1, 2, 3}, Kata.UniqueInOrder(new List<double> {1, 2, 3, 3}));
+      Assert.AreEqual(new List<char> {'1', '2', '3'}, Kata.UniqueInOrder(new List<char> {'1', '2', '3', '3'}));
+      Assert.AreEqual(new List<string> {"1", "2", "3"}, Kata.UniqueInOrder(new List<string> {"1", "2", "3", "3"}));
+    }
+    [Test]
+    public void Test1()
+    {
+      Assert.AreEqual("ABCDAB", Kata.UniqueInOrder("AAAABBBCCDAABBB"));
+    }
+    [Test]
+    public void Test2()
+    {
+      Assert.AreEqual("aA", Kata.UniqueInOrder("aA"));
+    }
+    [Test]
+    public void Test3()
+    {
+      Assert.AreEqual("AD", Kata.UniqueInOrder("ADD"));
+    }
+    [Test]
+    public void Test4()
+    {
+      Assert.AreEqual("DA", Kata.UniqueInOrder("DDA"));
+    }
+    [Test]
+    public void Test5()
+    {
+      Assert.AreEqual("1232456", Kata.UniqueInOrder("112332444566"));
+    }
+  }
+}
