@@ -1,0 +1,46 @@
+/*Challenge link:https://www.codewars.com/kata/5b077ebdaf15be5c7f000077/train/csharp
+Question:
+If you can't sleep, just count sheep!!
+
+Task:
+Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+
+/*
+
+//***************Solution********************
+
+using System;
+
+public static class Kata
+{
+  public static string CountSheep(int n)
+  {
+    string str = "";
+    for (int i = 1; i <= n; i++)
+      {
+      str = str + i + " sheep...";
+    }
+    return str;
+  }
+}
+
+
+//****************Sample Test*****************
+namespace Solution 
+{
+  using NUnit.Framework;
+  using System;
+
+  [TestFixture]
+  public class SolutionTest
+  {
+    [Test, Description("Example Tests")]
+    public void ExampleTests()
+    {
+      Assert.That(Kata.CountSheep(0), Is.EqualTo(""));
+      Assert.That(Kata.CountSheep(1), Is.EqualTo("1 sheep..."));
+      Assert.That(Kata.CountSheep(2), Is.EqualTo("1 sheep...2 sheep..."));
+      Assert.That(Kata.CountSheep(3), Is.EqualTo("1 sheep...2 sheep...3 sheep..."));
+    }
+  }
+}
