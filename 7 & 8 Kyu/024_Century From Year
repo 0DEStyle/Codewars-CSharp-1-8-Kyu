@@ -1,0 +1,67 @@
+/*Challenge link:https://www.codewars.com/kata/5a3fe3dde1ce0e8ed6000097/train/csharp
+Question:
+Introduction
+The first century spans from the year 1 up to and including the year 100, the second century - from the year 101 up to and including the year 200, etc.
+
+Task
+Given a year, return the century it is in.
+
+Examples
+1705 --> 18
+1900 --> 19
+1601 --> 17
+2000 --> 20
+
+
+/*
+
+//***************Solution********************
+
+//Convert the year into double then round up. 
+//Convert back to int and return the result.
+//Then simiplfied into one line by using an Enumerable methods.
+using System;
+public static class Kata
+{
+  public static int СenturyFromYear(int year) => Convert.ToInt32(Math.Ceiling((double)year/100));
+}
+
+//****************Sample Test*****************
+
+namespace Solution {
+  using NUnit.Framework;
+  using System;
+
+  
+
+  [TestFixture]
+  public class SolutionTest
+  {
+  
+  private  int check(int year)
+  {  
+    return year%100==0? year/100: year/100+1;
+  }
+    [Test]
+    public void BasicTest()
+    {    
+     Assert.AreEqual(21, Kata.СenturyFromYear(2018));
+     Assert.AreEqual(15, Kata.СenturyFromYear(1455));
+     Assert.AreEqual(18, Kata.СenturyFromYear(1703));
+     Assert.AreEqual(18, Kata.СenturyFromYear(1800));
+    }
+    
+    [Test]
+    public void RandomTest()
+    {
+      Random rnd = new Random();
+      for(int i=0;i<100;i++)
+      {
+        int n = rnd.Next(100,1000000);
+        Assert.That(Kata.СenturyFromYear(n),Is.EqualTo(check(n)));
+      }
+     
+    }
+     
+  }
+}
