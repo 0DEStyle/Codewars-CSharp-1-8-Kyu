@@ -1,0 +1,79 @@
+/*Challenge link:https://www.codewars.com/kata/5aa736a455f906981800360d/train/csharp
+Question:
+All of the animals are having a feast! Each animal is bringing one dish. There is just one rule: the dish must start and end with the same letters as the animal's name. For example, the great blue heron is bringing garlic naan and the chickadee is bringing chocolate cake.
+
+Write a function feast that takes the animal's name and dish as arguments and returns true or false to indicate whether the beast is allowed to bring the dish to the feast.
+
+Assume that beast and dish are always lowercase strings, and that each has at least two letters. beast and dish may contain hyphens and spaces, but these will not appear at the beginning or end of the string. They will not contain numerals.
+
+/*
+
+//***************Solution********************
+//check first and last character of string
+//String.Length -1 gets the last character of string
+//Then simiplfied into one line by using an Enumerable methods.
+
+public class Kata
+{
+    public static bool Feast(string beast, string dish) 
+      => beast[0] == dish[0] && beast[beast.Length -1] == dish[dish.Length -1] ? true : false;
+}
+
+//****************Sample Test*****************
+namespace Solution
+{
+    using System;
+    using System.Linq;
+    using NUnit.Framework;
+    using System.Collections.Generic;
+
+    [TestFixture]
+    public class Tests
+    {
+        [TestCase("great blue heron", "garlic naan")]
+        [TestCase("chickadee", "chocolate cake")]
+        [TestCase("marmot", "mulberry tart")]
+        [TestCase("porcupine", "pie")]
+        [TestCase("slow loris", "salsas")]
+        [TestCase("ox", "orange lox")]
+        [TestCase("blue-footed booby", "blueberry")]
+        public void BasicTestsTrue(string beast, string dish)
+        {
+            Assert.IsTrue(Kata.Feast(beast, dish));
+        }
+
+        [TestCase("cat", "yogurt")]
+        [TestCase("brown bear", "bear claw")]
+        [TestCase("electric eel", "lasagna")]
+        public void BasicTestsFalse(string beast, string dish)
+        {
+            Assert.IsFalse(Kata.Feast(beast, dish));
+        }
+
+        static Random rnd = new Random();
+
+        [Test]
+        public void RandomTests()
+        {
+            var beast = MakeStrig(2, 40);
+            var dish = MakeStrig(2, 40); ;
+            for (int i = 0; i < 91; i++)
+            {
+                if (rnd.Next() < .5) dish = beast[0] + dish + beast.Last();
+                Assert.That(Kata.Feast(beast, dish), Is.EqualTo(AuthorSolution(beast, dish)));
+            }
+        }
+
+        private static string MakeStrig(int min, int max)
+        {
+            var a = new List<char>();
+            var possible = "abcdefghijklmnopqrstuvwxyz";
+            var length = (int)Math.Ceiling(rnd.NextDouble() * max + min);
+            for (int i = 0; i < length; i++)
+                a.Add(possible[(int)Math.Floor(rnd.NextDouble() * possible.Length)]);
+            return string.Concat(a);
+
+        }
+        private static bool AuthorSolution(string beast, string dish) => beast[0] == dish[0] && beast.Last() == dish.Last();
+    }
+}
