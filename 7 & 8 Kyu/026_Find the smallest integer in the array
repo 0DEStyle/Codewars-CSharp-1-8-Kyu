@@ -1,0 +1,61 @@
+/*Challenge link:https://www.codewars.com/kata/55a2d7ebe362935a210000b2/train/csharp
+Question:
+Given an array of integers your solution should find the smallest integer.
+
+For example:
+
+Given [34, 15, 88, 2] your solution will return 2
+Given [34, -345, -1, 100] your solution will return -345
+You can assume, for the purpose of this kata, that the supplied array will not be empty.
+
+
+
+/*
+
+//***************Solution********************
+using System;
+public class Kata 
+{
+    public static int FindSmallestInt(int[] args) 
+    {
+      Array.Sort(args);
+      return args[0];
+    }
+}
+//****************Sample Test*****************
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+
+[TestFixture]
+public class Tests
+{
+    [Test]
+    [TestCase(new int[]{78,56,232,12,11,43}, ExpectedResult=11)]
+    [TestCase(new int[]{78,56,-2,12,8,-33}, ExpectedResult=-33)]
+    [TestCase(new int[]{int.MinValue,-1,0,1,int.MaxValue}, ExpectedResult=int.MinValue)]
+    public static int FixedTest(int[] args)
+    {
+        return Kata.FindSmallestInt(args);
+    }
+    
+    private static int Solution(int[] args)
+    {
+        return new List<int>(args).OrderBy(x => x).FirstOrDefault();
+    }
+    
+    [Test]
+    public static void RandomTest([Random(0,10,50)]int min)
+    {
+        Random r = new Random();
+        List<int> list = new List<int>();
+        for(int i = 0; i < 99; i++)
+        {
+            list.Add(r.Next(90)+10);
+        }
+        list.Add(min);
+        int[] args = list.ToArray();
+        Assert.AreEqual(Solution(args), Kata.FindSmallestInt(args));
+    }
+}
