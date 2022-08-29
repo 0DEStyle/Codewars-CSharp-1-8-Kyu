@@ -1,0 +1,63 @@
+/*Challenge link:https://www.codewars.com/kata/57e76bc428d6fbc2d500036d/train/csharp
+Question:
+Write a function to split a string and convert it into an array of words.
+
+Examples (Input ==> Output):
+"Robin Singh" ==> ["Robin", "Singh"]
+
+"I love arrays they are my favorite" ==> ["I", "love", "arrays", "they", "are", "my", "favorite"]
+
+/*
+
+//***************Solution********************
+
+//split the string with one space then retrun as array
+//Then simiplfied into one line by using an Enumerable methods.
+namespace Solution {
+  using System;
+
+  public class Solution
+  {
+    public static string[] StringToArray(string str) => str.Split(' ');
+  }
+}
+
+//****************Sample Test*****************
+namespace Solution {
+  using NUnit.Framework;
+  using System;
+  using System.Linq;
+
+  [TestFixture]
+  public class SolutionTest
+  {
+    Random random = new Random();
+    
+    [Test]
+    public void _1_Example()
+    {
+      Assert.AreEqual(new string[] {"Robin", "Singh"}, Solution.StringToArray("Robin Singh"));
+    }
+
+    [Test]
+    public void _2_Example()
+    {
+      Assert.AreEqual(new string[] {"I", "love", "arrays", "they", "are", "my", "favorite"}, Solution.StringToArray("I love arrays they are my favorite"));
+    }
+    
+    [Test]
+    public void _3_RandomTests()
+    {
+      for (var i = 0; i < 200; i++) {
+        var testString = MakeString(random.Next(0, 30));
+        Assert.AreEqual(testString.Split(' '), Solution.StringToArray(testString));
+      }
+    }
+    
+    string MakeString(int length) {
+      const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789  ";
+      return new string(Enumerable.Repeat(chars, length)
+        .Select(s => s[random.Next(s.Length)]).ToArray());
+    }
+  }
+}
