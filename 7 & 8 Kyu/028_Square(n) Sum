@@ -1,0 +1,64 @@
+/*Challenge link:https://www.codewars.com/kata/515e271a311df0350d00000f/train/csharp
+Question:
+Complete the square sum function so that it squares each number passed into it and then sums the results together.
+
+For example, for [1, 2, 2] it should return 9 because 1^2 + 2^2 + 2^2 = 9.
+
+/*
+
+//***************Solution********************
+
+//check length of array then loop through each element
+//find the square of the elements and add to varaible "ans"
+//convert "ans" back to int and return the result.
+
+using System;
+public static class Kata
+{
+  public static int SquareSum(int[] numbers) 
+  { 
+   double ans = 0;
+    for(int i = 0; i < numbers.Length; i++)
+      ans +=  Math.Pow(numbers[i], 2);
+    return Convert.ToInt32(ans);;
+  }
+}
+//****************Sample Test*****************
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using NUnit.Framework;
+
+[TestFixture]
+public class Tests
+{
+  private static IEnumerable<TestCaseData> sampleTestCases
+  {
+    get
+    {
+      yield return new TestCaseData(new int[] {1,2,2}).Returns(9);
+      yield return new TestCaseData(new int[] {1,2}).Returns(5);
+      yield return new TestCaseData(new int[] {5,3,4}).Returns(50);
+      yield return new TestCaseData(new int[] {}).Returns(0);
+    }
+  }
+
+  [Test, TestCaseSource("sampleTestCases"), Description("Sample Tests")]
+  public int SampleTest(int[] n) => Kata.SquareSum(n);
+  
+  private static Random rnd = new Random();
+  
+  private static int Solution(int[] n) => n.Sum((v) => v * v);
+  
+  [Test, Description("Random Tests")]
+  public void RandomTest()
+  {
+    for (int i = 0; i < 100; ++i)
+    {
+      int[] test = new int[rnd.Next(1, 10)].Select(_ => rnd.Next(0, 1000)).ToArray();
+      int expected = Solution(test);
+      int actual = Kata.SquareSum(test);
+      Assert.AreEqual(expected, actual);
+    }
+  }
+}
