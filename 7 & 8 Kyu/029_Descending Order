@@ -1,0 +1,59 @@
+/*Challenge link:https://www.codewars.com/kata/5467e4d82edf8bbf40000155/train/csharp
+Question:
+Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
+
+Examples:
+Input: 42145 Output: 54421
+
+Input: 145263 Output: 654321
+
+Input: 123456789 Output: 987654321
+
+/*
+
+//***************Solution********************
+using System;
+using System.Linq;
+
+//convert number to string, then order by descending
+//concat char(x) elements into string
+//convert back to int and return the result.
+//Then simiplfied into one line by using an Enumerable methods.
+public static class Kata
+{
+  public static int DescendingOrder(int num) => int.Parse(string.Concat(num.ToString().OrderByDescending(x => x)));
+}
+
+//****************Sample Test*****************
+
+using NUnit.Framework;
+
+[TestFixture]
+public class Tests
+{
+  [Test]
+  public void Test0()
+  {
+    Assert.AreEqual(0, Kata.DescendingOrder(0));
+  }  
+  [Test]
+  public void Test1()
+  {
+    Assert.AreEqual(1, Kata.DescendingOrder(1));
+  }
+  [Test]
+  public void Test15()
+  {
+    Assert.AreEqual(51, Kata.DescendingOrder(15));
+  }
+  [Test]
+  public void Test1021()
+  {
+    Assert.AreEqual(2110, Kata.DescendingOrder(1021));
+  }
+  [Test]
+  public void Test123456789()
+  {
+    Assert.AreEqual(987654321, Kata.DescendingOrder(123456789));
+  }
+}
