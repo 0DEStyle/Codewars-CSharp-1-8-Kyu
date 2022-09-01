@@ -1,0 +1,42 @@
+/*Challenge link:
+Question:
+It's pretty straightforward. Your goal is to create a function that removes the first and last characters of a string. You're given one parameter, the original string. You don't have to worry with strings with less than two characters.
+
+/*
+
+//***************Solution********************
+//remove substring of index 1, and the last index.
+//Then simiplfied into one line by using an Enumerable methods.
+using System;
+
+public class Kata
+{
+    public static string Remove_char(string s)=> s.Substring(1,s.Length-2);
+}
+
+//****************Sample Test*****************
+using System;
+using NUnit.Framework;
+
+        [TestFixture]
+        public class Test
+        {
+            [Test]
+            public void Test1()
+            {
+                StringAssert.AreEqualIgnoringCase("loquen", Kata.Remove_char("eloquent"));
+                StringAssert.AreEqualIgnoringCase("ountr", Kata.Remove_char("country"));
+                StringAssert.AreEqualIgnoringCase("erso", Kata.Remove_char("person"));
+                StringAssert.AreEqualIgnoringCase("lac", Kata.Remove_char("place"));
+                StringAssert.AreEqualIgnoringCase("", Kata.Remove_char("ok"));
+                StringAssert.AreEqualIgnoringCase("oopss", Kata.Remove_char("ooopsss"));
+            }
+
+            [Test]
+            public void RandomTest([Values(1)] int a, [Random(-1, 1, 30)] double d)
+            {
+                Rg rg = new Rg((int)d * 10000);
+                string s = rg.MyString();
+                StringAssert.AreEqualIgnoringCase(Kata14Feb.Remove_char(s), Kata.Remove_char(s));
+            }
+        }
