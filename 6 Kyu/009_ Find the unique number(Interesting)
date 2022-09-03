@@ -1,0 +1,94 @@
+
+/*Challenge link:https://www.codewars.com/kata/585d7d5adb20cf33cb000235/train/csharp
+Question:
+There is an array with some numbers. All numbers are equal except for one. Try to find it!
+
+findUniq([ 1, 1, 1, 2, 1, 1 ]) === 2
+findUniq([ 0, 0, 0.55, 0, 0 ]) === 0.55
+It’s guaranteed that array contains at least 3 numbers.
+
+The tests contain some very huge arrays, so think about performance.
+
+This is the first kata in series:
+
+Find the unique number (this kata)
+Find the unique string
+Find The Unique
+
+/*
+
+//***************Solution********************
+//find the first element in sequence with the condition 
+//loop throught each element and count them, if element only appeared once(==1) return the digit as result
+//Then simiplfied into one line by using an Enumerable methods.
+
+using System.Collections.Generic;
+using System.Linq;
+
+public class Kata
+{
+  public static int GetUnique(IEnumerable<int> numbers) => numbers.First(x => numbers.Count(i => i == x) == 1);
+}
+
+//****************Sample Test*****************
+
+namespace Solution
+{
+  using NUnit.Framework;
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+
+  [TestFixture]
+  public class SolutionTest
+  {
+    [TestCase(new [] {0, 0, 1, 0}, ExpectedResult = 1)]
+    [TestCase(new [] {1, 2, 2, 2}, ExpectedResult = 1)]
+    [TestCase(new [] {-2, 2, 2, 2}, ExpectedResult = -2)]
+    [TestCase(new [] {-3, -3, 0, -3}, ExpectedResult = 0)]
+    [TestCase(new [] {11, 11, 14, 11, 11}, ExpectedResult = 14)]
+    [TestCase(new [] {8, 8, 8, 8, 7}, ExpectedResult = 7)]
+    public int BaseTest(IEnumerable<int> numbers)
+    {
+      return Kata.GetUnique(numbers);
+    }
+    
+    [Test]
+    public void RandomTest()
+    {
+      for (var i = 10000; i < 10020; i++)
+      {
+        var arr = Gen(i);
+        Assert.AreEqual(InnerSolution(arr), Kata.GetUnique(arr));
+      }
+    }
+    
+    private IEnumerable<int> Gen(int max)
+    {
+      var number = new Random().Next(max);
+      var count = new Random().Next(3, 20);
+      var unique = new Random().Next(max);
+      
+      while (unique == number)
+      {
+        unique = new Random().Next(max);
+      }
+      
+      var list = new List<int>();
+      for (var i = 0; i < count; i++)
+      {
+        list.Add(number);
+      }
+      
+      list[new Random().Next(count - 1)] = unique;
+      
+      return list;
+    }
+    
+    private int InnerSolution(IEnumerable<int> numbers)
+    {
+      var tmp = numbers.OrderBy(n => n).ToList();
+      return tmp[0] == tmp[1] ? tmp[tmp.Count - 1] : tmp[0];
+    }
+  }
+}
