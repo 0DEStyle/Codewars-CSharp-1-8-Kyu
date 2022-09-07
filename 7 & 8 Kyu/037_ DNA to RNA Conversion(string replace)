@@ -1,0 +1,84 @@
+/*Challenge link:https://www.codewars.com/kata/5556282156230d0e5e000089/train/csharp
+Question:
+Deoxyribonucleic acid, DNA is the primary information storage molecule in biological systems. It is composed of four nucleic acid bases Guanine ('G'), Cytosine ('C'), Adenine ('A'), and Thymine ('T').
+
+Ribonucleic acid, RNA, is the primary messenger molecule in cells. RNA differs slightly from DNA its chemical structure and contains no Thymine. In RNA Thymine is replaced by another nucleic acid Uracil ('U').
+
+Create a function which translates a given DNA string into RNA.
+
+For example:
+
+"GCAT"  =>  "GCAU"
+The input string can be of arbitrary length - in particular, it may be empty. All input is guaranteed to be valid, i.e. each input string will only ever consist of 'G', 'C', 'A' and/or 'T'.
+
+/*
+
+//***************Solution********************
+//Replace "T" to "U"
+//Then simiplfied into one line by using an Enumerable methods.
+using System;
+namespace Converter {
+  public class Converter
+  {
+    public string dnaToRna(string dna) => dna.Replace("T","U");
+  }
+}
+
+//****************Sample Test*****************
+namespace Converter {
+  using NUnit.Framework;
+  using System;
+  
+  [TestFixture]
+  public class Test
+  {
+    
+    public void test() {
+      Converter converter = new Converter();
+      Assert.AreEqual("UUUU", converter.dnaToRna("TTTT"));
+    }
+    
+    [Test]
+    public void testDna2() {
+        Converter converter = new Converter();
+        Assert.AreEqual("GCAU", converter.dnaToRna("GCAT"));
+    }
+    
+    [Test]
+    public void testDna3() {
+        Converter converter = new Converter();
+        Assert.AreEqual("GACCGCCGCC", converter.dnaToRna("GACCGCCGCC"));
+    }
+    
+    [Test]
+    public void testDna4() {
+        Converter converter = new Converter();
+        Assert.AreEqual("GAUUCCACCGACUUCCCAAGUACCGGAAGCGCGACCAACUCGCACAGC", converter.dnaToRna("GATTCCACCGACTTCCCAAGTACCGGAAGCGCGACCAACTCGCACAGC"));
+    }
+    
+    [Test]
+    public void testDna5() {
+        Converter converter = new Converter();
+        Assert.AreEqual("CACGACAUACGGAGCAGCGCACGGUUAGUACAGCUGUCGGUGAACUCCAUGACA", converter.dnaToRna("CACGACATACGGAGCAGCGCACGGTTAGTACAGCTGTCGGTGAACTCCATGACA"));
+    }
+    
+    [Test]
+    public void testDna6() {
+        Converter converter = new Converter();
+        Assert.AreEqual("CACGACAUACGGAGCAGCGCACGGUUAGUACAGCUGUCGGUGAACUCCAUGACA", converter.dnaToRna("CACGACATACGGAGCAGCGCACGGTTAGTACAGCTGTCGGTGAACTCCATGACA"));
+    }
+    
+    [Test]
+    public void testDna7() {
+        Converter converter = new Converter();
+        Assert.AreEqual("AACCCUGUCCACCAGUAACGUAGGCCGACGGGAAAAAUAAACGAUCUGUCAAUG", converter.dnaToRna("AACCCTGTCCACCAGTAACGTAGGCCGACGGGAAAAATAAACGATCTGTCAATG"));
+    }
+    
+    [Test]
+    public void testDna8() {
+        Converter converter = new Converter();
+        Assert.AreEqual("GAAGCUUAUCCGUUCCUGAAGGCUGUGGCAUCCUCUAAAUCAGACUUGGCUACGCCGUUAGCCGAGGGCUUAGCGUUGAGUGUCAUUAUAUACGCGGCCUGCGACCUGGCCACACAAUGCCCUCGAAAAUUUUUCUUUCGGUUAUACGAGUUGCGAAACCUUUCGCGCGUAGACGAAGAAUUUGAAGUGGCCUACACCGUUUGGAAAGCCGUUCUCAUUAGAAUGGUACCGACUACUCGGCUCGGAGUCAUUGUAUAGGGAGAGUGUCGUAUCAACAUCACACACUUUUAGCAUUUAAGGUCCAUGGCCGUUGACAGGUACCGA", converter.dnaToRna("GAAGCTTATCCGTTCCTGAAGGCTGTGGCATCCTCTAAATCAGACTTGGCTACGCCGTTAGCCGAGGGCTTAGCGTTGAGTGTCATTATATACGCGGCCTGCGACCTGGCCACACAATGCCCTCGAAAATTTTTCTTTCGGTTATACGAGTTGCGAAACCTTTCGCGCGTAGACGAAGAATTTGAAGTGGCCTACACCGTTTGGAAAGCCGTTCTCATTAGAATGGTACCGACTACTCGGCTCGGAGTCATTGTATAGGGAGAGTGTCGTATCAACATCACACACTTTTAGCATTTAAGGTCCATGGCCGTTGACAGGTACCGA"));
+    }
+    
+  }
+}
