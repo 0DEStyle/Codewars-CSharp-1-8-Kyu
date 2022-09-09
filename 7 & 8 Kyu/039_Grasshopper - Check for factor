@@ -1,0 +1,60 @@
+/*Challenge link:https://www.codewars.com/kata/55cbc3586671f6aa070000fb/train/csharp
+Question:
+This function should test if the factor is a factor of base.
+
+Return true if it is a factor or false if it is not.
+
+About factors
+Factors are numbers you can multiply together to get another number.
+
+2 and 3 are factors of 6 because: 2 * 3 = 6
+
+You can find a factor by dividing numbers. If the remainder is 0 then the number is a factor.
+You can use the mod operator (%) in most languages to check for a remainder
+For example 2 is not a factor of 7 because: 7 % 2 = 1
+
+Note: base is a non-negative number, factor is a positive number.
+
+/*
+
+//***************Solution********************
+
+//if modulus is 0, return true, else false
+//Then simiplfied into one line by using an Enumerable methods.
+public class Kata
+{
+  public static bool CheckForFactor(int num, int factor) => num % factor == 0 ? true : false;
+}
+
+//****************Sample Test*****************
+using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class Tests
+{
+  [Test]
+  [TestCase(10,2,true)]
+  [TestCase(63,7,true)]
+  [TestCase(2450,5,true)]
+  [TestCase(24612,3,true)]
+  [TestCase(9,2,false)]
+  [TestCase(653,7,false)]
+  [TestCase(2453,5,false)]
+  [TestCase(24617,3,false)]
+  public static void FixedTest(int num, int factor, bool isFactor)
+  {
+    Assert.AreEqual(isFactor, Kata.CheckForFactor(num, factor));
+  }
+  
+  [Test]
+  public static void RandomTest([Random(100,10000,10)]int num, [Random(1,20,10)]int factor)
+  {
+    Assert.AreEqual(Solution(num, factor), Kata.CheckForFactor(num, factor), string.Format("Should work for num = {0} and factor = {1}", num, factor));
+  }
+  
+  private static bool Solution(int num, int factor)
+  {
+    return num % factor == 0;
+  }
+}
