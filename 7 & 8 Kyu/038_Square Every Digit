@@ -1,0 +1,72 @@
+/*Challenge link: https://www.codewars.com/kata/546e2562b03326a88e000020/train/csharp
+Question:
+Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1.
+
+Note: The function accepts an integer and returns an integer
+
+/*
+
+//***************Solution********************
+using System;
+
+public class Kata
+{
+  public static int SquareDigits(int n)
+  {
+    int digit = 0;
+    string text = "";
+    
+    for(int i = 0; i < n.ToString().Length; i++){
+      
+    //-48 because of ASCII code position
+    digit = (int)(n.ToString()[i])-48;
+    //square
+    digit *= digit;
+      //Concatenate
+    text += digit.ToString();
+      //Log
+    //Console.WriteLine(text);
+    }
+    return Int32.Parse(text);
+  }
+}
+
+
+//****************Sample Test*****************
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using NUnit.Framework;
+
+[TestFixture]
+public class KataTest
+{
+  public int Solution(int n)
+  {
+    return int.Parse(String.Join("", n.ToString().Select(d => int.Parse(""+d) * int.Parse(""+d))));
+  }
+  
+  [Test]
+  public void KataSquareDigitsTest()
+  {
+    Assert.AreEqual(811181, Kata.SquareDigits(9119));
+    Assert.AreEqual(9414, Kata.SquareDigits(3212));
+    Assert.AreEqual(4114, Kata.SquareDigits(2112));
+    Assert.AreEqual(0, Kata.SquareDigits(0));
+  }
+  
+  [Test]
+  public void RandomTest()
+  {
+    var random = new Random();
+    int next;
+    
+    for (int i = 0; i < 10; ++i)
+    {
+      next = random.Next(0, 1001);
+      Assert.AreEqual(Solution(next), Kata.SquareDigits(next));
+    }
+  }
+}
