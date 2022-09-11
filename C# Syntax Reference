@@ -1,0 +1,31 @@
+- Print out Array -
+Console.WriteLine(String.Join(" ", test).ToArray());
+
+- Array -
+
+Declare Array
+int[] a = new int[] { 6,6,6,6,1 ,10, 10,10,10,10};
+Empty array
+string[] a = new string[] { };
+or
+string[] a = new string[] {0};
+Convert an Array to List
+a = b.ToList();
+
+- List -
+Library
+using System.Collections.Generic;
+
+Initialize List
+List<double> num = new List<double>(new double[10]);
+Empty List
+List<double> num = new List<double>();
+Convert an List to Array
+a = b.ToArray();
+
+
+
+- Ternary Sign -
+return n == 0 ? new double[]{0} : res;
+or
+=> n == 0 ? new double[]{0} : res;
