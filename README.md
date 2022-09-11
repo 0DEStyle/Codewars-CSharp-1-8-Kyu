@@ -11,6 +11,7 @@ Link to Codewars Profile: https://www.codewars.com/users/0DE <br />
 
 ⭐You can find challenge link and question at the start of the file,
 then solutions in the middle and test cases at the very end. <br />
+![alt text](https://github.com/0DEStyle/Codewars-Challenges-/blob/main/Challenge%20Format.png)
 
 ## Commonly used Class Libraries:
 System.Linq <br />
