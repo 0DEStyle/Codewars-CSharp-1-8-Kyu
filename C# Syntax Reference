@@ -27,5 +27,10 @@ a = b.ToArray();
 
 - Ternary Sign -
 return n == 0 ? new double[]{0} : res;
-or
+or Lambda expressions
 => n == 0 ? new double[]{0} : res;
+Declare an Array with Lambda expressions
+public static int[] minMax(int[] lst) => new int[] {lst.Min(), lst.Max()};
+Declare an Predefined Array with Lambda expressions and select one element
+public static string HowMuchILoveYou(int nb_petals)=>  
+  new string[] {"I love you", "a little", "a lot", "passionately", "madly", "not at all"}[(nb_petals - 1) % 6];
