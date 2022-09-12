@@ -1,0 +1,97 @@
+/*Challenge link:https://www.codewars.com/kata/57f24e6a18e9fad8eb000296/train/csharp
+Question:
+Who remembers back to their time in the schoolyard, when girls would take a flower and tear its petals, saying each of the following phrases each time a petal was torn:
+
+I love you
+a little
+a lot
+passionately
+madly
+not at all
+When the last petal was torn there were cries of excitement, dreams, surging thoughts and emotions.
+
+Your goal in this kata is to determine which phrase the girls would say for a flower of a given number of petals, where nb_petals > 0.
+
+
+
+
+/*
+
+//***************Solution********************
+
+using System;
+
+public class Kata
+{
+  public static string HowMuchILoveYou(int nb_petals)
+  {
+    int count = 0;
+    string getText = "";
+    string[] text = new string[]{
+    "I love you",
+    "a little",
+    "a lot",
+    "passionately",
+    "madly",
+    "not at all"
+    };
+    
+    //looping count up to 6 times because 6 words
+    //can use .Length() for cutomization.
+    for (int i = 0; i < nb_petals; i++){
+    if(count >= 6){
+        count = 0;
+    }
+    getText = text[count];
+    count++;
+}
+    return getText;
+  }
+}
+
+Solution 2
+using System;
+
+//Predefine the string elements inside the Array
+//select the answer by subtract number of petals by 1, and take the modulo of 6
+//Then simiplfied into one line by using an Enumerable methods.
+public class Kata
+{
+  public static string HowMuchILoveYou(int nb_petals)=>  
+  new string[] {"I love you", "a little", "a lot", "passionately", "madly", "not at all"}[(nb_petals - 1) % 6];
+}
+
+//****************Sample Test*****************
+namespace Solution {
+  using NUnit.Framework;
+  using System;
+
+  [TestFixture]
+  public class Test
+  {
+    private static string Solution(int nb_petals)
+    {
+      return new string[] {"I love you", "a little", "a lot", "passionately", "madly", "not at all"}[(nb_petals - 1) % 6];
+    }
+    
+    private static Random rnd = new Random();
+    
+    [Test]
+    public void SampleTests()
+    {
+      Assert.AreEqual("I love you", Kata.HowMuchILoveYou(7));
+      Assert.AreEqual("a lot", Kata.HowMuchILoveYou(3));
+      Assert.AreEqual("not at all", Kata.HowMuchILoveYou(6));
+    }
+    
+    [Test]
+    public void RandomTests()
+    {
+      for (int i = 0; i < 100; ++i)
+      {
+        int nb_petals = rnd.Next(1, 65536);
+        Assert.AreEqual(Solution(nb_petals), Kata.HowMuchILoveYou(nb_petals));
+      }
+    }
+  }
+}
