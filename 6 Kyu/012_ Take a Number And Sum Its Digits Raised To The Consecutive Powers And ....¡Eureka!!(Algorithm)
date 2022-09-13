@@ -1,0 +1,150 @@
+/*Challenge link:https://www.codewars.com/kata/5626b561280a42ecc50000d1/train/csharp
+Question:
+The number 89 is the first integer with more than one digit that fulfills the property partially introduced in the title of this kata. What's the use of saying "Eureka"? Because this sum gives the same number.
+
+In effect: 89 = 8^1 + 9^2
+
+The next number in having this property is 135.
+
+See this property again: 135 = 1^1 + 3^2 + 5^3
+
+We need a function to collect these numbers, that may receive two integers a, b that defines the range [a, b] (inclusive) and outputs a list of the sorted numbers in the range that fulfills the property described above.
+
+Let's see some cases (input -> output):
+
+1, 10 -> [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+1, 100 -> [1, 2, 3, 4, 5, 6, 7, 8, 9, 89]
+If there are no numbers of this kind in the range [a, b] the function should output an empty list.
+
+90, 100 --> []
+
+
+/*
+
+//***************Solution********************
+using System.Linq;
+using System;
+
+public class SumDigPower {
+/*Typecast the range "a" and "b" into integer.
+Set start range to "a" and count up to "b - a".
+
+Conditioning using where the element(x) is the same as the "result"
+
+To get the "result":
+Get element(x) convert it to string first, select the character(c) from index(i)(to get the isolated digit, start from 0)
+Typecast into long, then find the Sum of the digit(c) to the power of i + 1(Consecutive power)
+
+If the element(x) is the same as the "result" 
+Then convert the result into long(int64) and store as array.
+
+Simiplfied by using an Enumerable methods.
+*/
+  
+    public static long[] SumDigPow(long a, long b) =>
+      Enumerable.Range((int) a, (int) (b - a))
+      .Where(x => (long) x.ToString().Select((c, i) =>
+      Math.Pow(c - '0', i + 1)).Sum() == x).Select(Convert.ToInt64).ToArray();
+}
+
+
+//****************Sample Test*****************
+using System;
+using System.Collections.Generic;
+using NUnit.Framework;
+
+[TestFixture]
+public static class SumDigPowerTests 
+{
+
+    private static string Array2String( long[] list )
+    {
+        return "[" + string.Join(", ", list) + "]";
+    }
+    private static void testing(long a, long b, long[] res) 
+    {
+        Assert.AreEqual(Array2String(res), 
+                        Array2String(SumDigPower.SumDigPow(a, b)));
+    }
+[Test]
+    public static void test1() 
+    {        
+        Console.WriteLine("Basic Tests SumDigPow");
+        testing(1, 10, new long[] {1, 2, 3, 4, 5, 6, 7, 8, 9});
+        testing(1, 100, new long[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 89});
+        testing(10, 100,  new long[] {89});
+        testing(90, 100, new long[] {});
+        testing(90, 150, new long[] {135});
+        testing(50, 150, new long[] {89, 135});
+        testing(10, 150, new long[] {89, 135});
+        
+    }
+    //-----------------------
+    private static int SumPowerDigitsSol(long num) 
+    {
+        string s = num.ToString(); int result = 0;
+        for (int i = 0; i < s.Length; i++)
+            result += (int)Math.Pow((int)(s[i] - '0'), i+1);
+        return result;
+    }
+    public static long[] SumDigPowSol(long a, long b) 
+    {
+        List<long> res = new List<long>();
+        long nb = a;
+        while (nb <= b) 
+        {
+            if (SumPowerDigitsSol(nb) == nb)
+                res.Add(nb);
+            nb++;
+        }
+        return res.ToArray();
+    }
+    //-----------------------
+    private static Random rnd = new Random();
+    private static void wTests1() 
+    {
+        for (int i = 0; i < 40; i++) 
+        {
+            long a = rnd.Next(100, 500);
+            long b = rnd.Next(1000, 3000);
+            Assert.AreEqual(Array2String(SumDigPowSol(a, b)), Array2String(SumDigPower.SumDigPow(a, b)));
+        }
+    }
+[Test] 
+    public static void wRandomTests1() 
+    { 
+        Console.WriteLine("Random Tests 1******* SumDigPow");
+        wTests1();
+    } 
+    private static void wTests2() 
+    {
+        for (int i = 0; i < 40; i++) 
+        {
+            long a = rnd.Next(10, 999);
+            long b = rnd.Next(1100, 3000);
+            Assert.AreEqual(Array2String(SumDigPowSol(a, b)), Array2String(SumDigPower.SumDigPow(a, b)));
+        }
+    }
+[Test] 
+    public static void wRandomTests2() 
+    { 
+        Console.WriteLine("Random Tests 2******* SumDigPow");
+        wTests2();
+    } 
+    private static void wTests3() 
+    {
+        for (int i = 0; i < 40; i++) 
+        {
+            long a = rnd.Next(2620000, 2640000);
+            long b = rnd.Next(2647000, 2648000);
+            Assert.AreEqual(Array2String(SumDigPowSol(a, b)), Array2String(SumDigPower.SumDigPow(a, b)));
+        }
+    }
+[Test] 
+    public static void wRandomTests3() 
+    { 
+        Console.WriteLine("Random Tests 3******* SumDigPow");
+        wTests3();
+    } 
+}
