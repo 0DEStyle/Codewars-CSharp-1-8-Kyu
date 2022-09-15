@@ -1,0 +1,99 @@
+/*Challenge link:https://www.codewars.com/kata/563b662a59afc2b5120000c6/train/csharp
+Question:
+In a small town the population is p0 = 1000 at the beginning of a year. The population regularly increases by 2 percent per year and moreover 50 new inhabitants per year come to live in the town. How many years does the town need to see its population greater or equal to p = 1200 inhabitants?
+
+At the end of the first year there will be: 
+1000 + 1000 * 0.02 + 50 => 1070 inhabitants
+
+At the end of the 2nd year there will be: 
+1070 + 1070 * 0.02 + 50 => 1141 inhabitants (** number of inhabitants is an integer **)
+
+At the end of the 3rd year there will be:
+1141 + 1141 * 0.02 + 50 => 1213
+
+It will need 3 entire years.
+More generally given parameters:
+
+p0, percent, aug (inhabitants coming or leaving each year), p (population to surpass)
+
+the function nb_year should return n number of entire years needed to get a population greater or equal to p.
+
+aug is an integer, percent a positive or null floating number, p0 and p are positive integers (> 0)
+
+Examples:
+nb_year(1500, 5, 100, 5000) -> 15
+nb_year(1500000, 2.5, 10000, 2000000) -> 10
+Note:
+Don't forget to convert the percent parameter as a percentage in the body of your function: if the parameter percent is 2 you have to convert it to 0.02.
+
+/*
+
+//***************Solution********************
+using System;
+
+class Arge {
+    
+    public static int NbYear(int p0, double percent, int aug, int p) {
+      double percentage = percent /100;
+      int currentPopulation = p0;
+      int year = 0;
+      while(currentPopulation < p){
+          currentPopulation = (int)(currentPopulation + currentPopulation * percentage + aug);
+          year++;
+        }
+      return year;
+    }
+}
+
+//****************Sample Test*****************
+using System;
+using NUnit.Framework;
+
+[TestFixture]
+public static class ArgeTests {
+
+    private static Random rnd = new Random();
+
+    private static void testing(int actual, int expected) {
+        Assert.AreEqual(expected, actual);
+    }
+
+[Test]
+    public static void test1() {
+        Console.WriteLine("Testing NbYear");
+        testing(Arge.NbYear(1500, 5, 100, 5000), 15);
+        testing(Arge.NbYear(1500000, 2.5, 10000, 2000000), 10);
+        testing(Arge.NbYear(1500000, 0.25, 1000, 2000000), 94);
+        testing(Arge.NbYear(1500000, 0.25, -1000, 2000000), 151);
+        testing(Arge.NbYear(1500000, 0.25, 1, 2000000), 116);
+        testing(Arge.NbYear(1500000, 0.0, 10000, 2000000), 50);
+        testing(Arge.NbYear(1000, 2.0, 50, 1214), 4);
+    }
+    
+    //-----------------------
+    private static int NbYearSol(int p0, double percent, int aug, int p) {
+        int i = 1;
+        double mult = 1 + percent / 100.0;
+        double prev = p0;
+        while (prev < p) {
+            double ne = Math.Floor(prev * mult + aug);
+            prev = ne;
+            i++;
+        }
+        return (i - 1);
+    }    
+    
+    //-----------------------
+[Test]    
+    public static void RandomTest() {
+      Console.WriteLine("Random Tests");
+      for (int i = 0; i < 100; i++) { 
+        int p0 = rnd.Next(10000, 15000000);
+        double percent = rnd.Next(50, 1000) / 100.0;
+        int aug = (int)(p0 / 200.0);
+        int k = rnd.Next(5, 100);
+        int p = p0 + k * aug; 
+        testing(Arge.NbYear(p0, percent, aug, p), NbYearSol(p0, percent, aug, p)); 
+      }
+    }  
+}
