@@ -1,0 +1,57 @@
+/*Challenge link:https://www.codewars.com/kata/555a67db74814aa4ee0001b5/train/csharp
+Question:
+In this Kata we are passing a number (n) into a function.
+
+Your code will determine if the number passed is even (or not).
+
+The function needs to return either a true or false.
+
+Numbers may be positive or negative, integers or floats.
+
+Floats with decimal part non equal to zero are considered UNeven for this kata.
+
+/*
+
+//***************Solution********************
+//check if modulus 2 is 0.
+//Then simiplfied into one line by using an Enumerable methods.
+public class Number
+{
+  public bool IsEven(double n) => n%2==0;
+}
+
+//****************Sample Test*****************
+using NUnit.Framework;
+
+[TestFixture]
+public class NumberTest
+{
+  private Number num;
+  
+  [SetUp]
+  public void SetUp() 
+  {
+    num = new Number();
+  }
+
+  [TearDown]
+  public void TearDown()
+  {
+    num = null;
+  }
+
+  [Test]
+  public void Tests()
+  {
+    Assert.AreEqual(true, num.IsEven(0));
+    Assert.AreEqual(false, num.IsEven(0.5));
+    Assert.AreEqual(false, num.IsEven(1));
+    Assert.AreEqual(true, num.IsEven(2));
+    Assert.AreEqual(true, num.IsEven(-4));
+    Assert.AreEqual(false, num.IsEven(15));
+    Assert.AreEqual(true, num.IsEven(20));
+    Assert.AreEqual(true, num.IsEven(220));
+    Assert.AreEqual(false, num.IsEven(222222221));
+    Assert.AreEqual(true, num.IsEven(50000000000000));        
+  }
+}
