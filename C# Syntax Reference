@@ -30,7 +30,6 @@ Convert an List to Array
 a = b.ToArray();
 
 
-
 - Ternary Sign -
 return n == 0 ? new double[]{0} : res;
 or Lambda expressions
@@ -40,3 +39,8 @@ public static int[] minMax(int[] lst) => new int[] {lst.Min(), lst.Max()};
 Declare an Predefined Array with Lambda expressions and select one element
 public static string HowMuchILoveYou(int nb_petals)=>  
   new string[] {"I love you", "a little", "a lot", "passionately", "madly", "not at all"}[(nb_petals - 1) % 6];
+  
+  
+- Lambda Expressions - 
+Check whether a string is Isograms or not (seek 7 & 8 Kyu > 047_Isograms)
+=> str.ToLower().Distinct().Count()==str.Length;
