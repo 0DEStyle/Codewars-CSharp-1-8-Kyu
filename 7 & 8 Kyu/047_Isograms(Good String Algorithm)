@@ -1,0 +1,130 @@
+/*Challenge link:https://www.codewars.com/kata/54ba84be607a92aa900000f1/train/csharp
+Question:
+An isogram is a word that has no repeating letters, consecutive or non-consecutive. Implement a function that determines whether a string that contains only letters is an isogram. Assume the empty string is an isogram. Ignore letter case.
+
+Example: (Input --> Output)
+
+"Dermatoglyphics" --> true
+"aba" --> false
+"moOse" --> false (ignore letter case)
+
+/*
+
+//***************Solution********************
+//Solution 1
+//convert all letters to lower case first, and convert the string into char array
+//sort the char array in order.
+//In a for loop, check if the current letter is equal to the next letter, then a letter is repeated
+//thus it is not an isogram.
+//else it is an Isogram.
+
+using System;
+
+public class Kata
+{
+  public static bool IsIsogram(string str) 
+  {
+    char[] arr = str.ToLower().ToCharArray();
+    Array.Sort(arr);
+    
+    for(int i = 0; i < arr.Length -1; i++){
+      if(arr[i] == arr[i + 1]){
+          //Console.WriteLine("Not an Isogram!");
+          return false;
+      }
+    }
+    //Console.WriteLine("It is an Isogram!");
+    return true;
+  }
+}
+
+//solution 2
+//Same priciple as above
+// simiplfied into one line by using an Enumerable methods.
+
+using System;
+using System.Linq;
+public class Kata
+{
+  public static bool IsIsogram(string str) 
+  {
+    return str.ToLower().Distinct().Count()==str.Length;
+  }
+}
+//****************Sample Test*****************
+using NUnit.Framework;
+using System;
+using System.Collections.Generic;
+
+[TestFixture]
+public class BasicTests
+{
+
+    private static IEnumerable<TestCaseData> testCases
+    {
+      get
+      {
+        yield return new TestCaseData("Dermatoglyphics").Returns(true);
+        yield return new TestCaseData("isogram").Returns(true);
+        yield return new TestCaseData("moose").Returns(false);
+        yield return new TestCaseData("isIsogram").Returns(false);
+        yield return new TestCaseData("aba").Returns(false);
+        yield return new TestCaseData("moOse").Returns(false);
+        yield return new TestCaseData("thumbscrewjapingly").Returns(true);
+        yield return new TestCaseData("").Returns(true);
+      }
+    }
+
+    [Test, TestCaseSource("testCases")]
+    public bool Test(string str) => Kata.IsIsogram(str);
+}
+
+[TestFixture]
+public class MoreTests
+{
+    private static readonly string _lowers = "abcdefghijklmnopqrstuvwxyz";
+    private static readonly string _uppers = _lowers.ToUpper();
+    
+    [Test]
+    public void LowerCaseAlphabetPlusOneChar()
+    {
+        Random rnd = new Random();
+        Assert.IsFalse(Kata.IsIsogram(String.Format("{0}{1}", _lowers, _lowers[rnd.Next(0, _lowers.Length)])));
+    }
+    
+    [Test]
+    public void UpperCaseAlphabetPlusOneChar()
+    {
+        Random rnd = new Random();
+        Assert.IsFalse(Kata.IsIsogram(String.Format("{0}{1}", _uppers, _uppers[rnd.Next(0, _uppers.Length)])));
+    }
+}
+
+
+// I inherited this code, so hopefully it's not broken -- Souzooka
+// I did up the amount of random tests from 9(!) to 100 though
+[TestFixture]
+public class RandomTests
+{
+    private static readonly string _lowers = "abcdefghijklmnopqrstuvwxyz";
+    private static readonly string _uppers = _lowers.ToUpper();
+  
+    [Test]
+    public void RandomTest()
+    {
+      var randomTestStr = "";
+      Random rnd = new Random();
+      var isIsogram = true;
+      
+      for (var i = 0; i < 100; i++) {
+          var thisChar =  rnd.Next(0, 99) < 50 ? 
+                                _lowers[(rnd.Next(0, _lowers.Length))] 
+                                : _uppers[(rnd.Next(0, _uppers.Length))];
+          if (randomTestStr.ToUpper().Contains(thisChar.ToString().ToUpper())) isIsogram = false; 
+          randomTestStr += thisChar;           
+      }
+    
+      Console.WriteLine(String.Format("Test string for Random Tests: {0}", randomTestStr));
+      Assert.AreEqual(isIsogram, Kata.IsIsogram(randomTestStr));
+    }
+}
