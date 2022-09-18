@@ -1,0 +1,93 @@
+/*Challenge link:https://www.codewars.com/kata/57a429e253ba3381850000fb/train/csharp
+Question:
+Write function bmi that calculates body mass index (bmi = weight / height2).
+
+if bmi <= 18.5 return "Underweight"
+
+if bmi <= 25.0 return "Normal"
+
+if bmi <= 30.0 return "Overweight"
+
+if bmi > 30 return "Obese"
+
+
+
+/*
+
+//***************Solution********************
+
+//solution 1
+//calculate the bmi using the formula bmi = weight / height^2
+//check conditions
+//return a result corresponding to the condition.
+using System;
+public class Kata
+{
+  public static string Bmi(double weight, double height)
+  {
+    double bmi = 0;
+    bmi = weight / Math.Pow(height, 2);
+    bmi = Math.Round(bmi, 1);
+    if (bmi <= 18.5)
+      return "Underweight";
+    if (bmi <= 25.0)
+      return "Normal";
+    if (bmi <= 30.0)
+      return "Overweight";
+    
+      return "Obese";
+    
+  }
+}
+//Solution 2
+//Save principle as above
+//Then simiplfied into one line by using an Enumerable methods.
+public class Kata {
+  public static string Bmi(double w, double h)
+    => (w = w / h / h) > 30 ? "Obese" : w > 25 ? "Overweight" : w > 18.5 ? "Normal" : "Underweight";
+}
+
+//****************Sample Test*****************
+namespace Solution {
+  using NUnit.Framework;
+  using System;
+  using System.Linq;
+
+  [TestFixture]
+  public class SolutionTest
+  {
+    private static Random rnd = new Random();
+    
+    private static string Solution(double w, double h)
+    {
+      double r = w/(h * h);
+      return (r > 30) ? "Obese" : (r > 25) ? "Overweight" : (r > 18.5) ? "Normal" : "Underweight";
+    }
+    
+    [Test, Description("Fixed Tests")]
+    public void FixedTest()
+    {
+      Action[] tests = new Action[]
+      {
+        () => Assert.AreEqual("Underweight", Kata.Bmi(50, 1.80)),
+        () => Assert.AreEqual("Normal", Kata.Bmi(80, 1.80)),
+        () => Assert.AreEqual("Overweight", Kata.Bmi(90, 1.80)),
+        () => Assert.AreEqual("Obese", Kata.Bmi(110, 1.80)),
+      };
+      tests.OrderBy(x => rnd.Next()).ToList().ForEach(a => a.Invoke());
+    }
+    
+    [Test, Description("Random Tests")]
+    public void RandomTest()
+    {
+      for (int i = 0; i < 100; ++i)
+      {
+        double weight = rnd.NextDouble() * 250 + 50;
+        double height = rnd.NextDouble() * 2.5 + 0.5;
+        string expected = Solution(weight, height);
+        string actual = Kata.Bmi(weight, height);
+        Assert.AreEqual(expected, actual);
+      }
+    }
+  }
+}
