@@ -7,6 +7,12 @@ int firstTwoDigits = number.ToString().Substring(0,2);
 int firstDigit = (int)(Value.ToString()[0]) - 48;
 int firstDigit = (int)(Value / Math.Pow(10, (int)Math.Floor(Math.Log10(Value))));
 
+- String Manuipulation - 
+Remove character from string (seek 048_Remove exclamation marks)
+public static string RemoveExclamationMarks(string s) => Regex.Replace(s,@"!", "");
+or
+public static string RemoveExclamationMarks(string s) => s.Replace("!", "");
+
 - Array -
 
 Declare Array
@@ -47,3 +53,6 @@ Check whether a string is Isograms or not (seek 7 & 8 Kyu > 047_Isograms)
 
 Given an array of integers, find the one that appears an odd number of times. (seek 6 Kyu 013_Find the odd int)
 public static int find_it(int[] seq) => seq.First(x => seq.Count(y => y == x) % 2 == 1);
+
+Example of how to set multiple conditions in a Lambda Expression (calculate BMI)
+public static string Bmi(double w, double h) => (w = w / h / h) > 30 ? "Obese" : w > 25 ? "Overweight" : w > 18.5 ? "Normal" : "Underweight";
