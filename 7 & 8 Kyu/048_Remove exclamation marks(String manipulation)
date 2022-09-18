@@ -1,0 +1,78 @@
+/*Challenge link:https://www.codewars.com/kata/57a0885cbb9944e24c00008e/train/csharp
+Question:
+Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+
+
+/*
+
+//***************Solution********************
+//solution 1
+//from string "s", replace "!" with ""(nothing)
+//Then simiplfied into one line by using an Enumerable methods.
+
+using System.Text.RegularExpressions;
+public class Kata
+{
+  public static string RemoveExclamationMarks(string s) 
+    => Regex.Replace(s,@"!", "");
+}
+
+//solution 2
+using System;
+public class Kata
+{
+  public static string RemoveExclamationMarks(string s)
+  {
+       return s.Replace("!", "");
+  }
+}
+
+//****************Sample Test*****************
+using NUnit.Framework;
+using System;
+using System.Text;
+
+[TestFixture]
+public class Tests
+{
+  private const int RandomTestsCount = 100, MinRandomStringLength = 1, MaxRandomStringLength = 50;
+  private const string AllowedChars = "!!!!!!abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ@#$%^&*()";
+  
+  [Test]
+  public static void BasicTests()
+  {
+    Assert.AreEqual("", Kata.RemoveExclamationMarks(""), "Input: Empty string");
+    Assert.AreEqual("", Kata.RemoveExclamationMarks("!"), "Input: " + "!");
+    Assert.AreEqual("", Kata.RemoveExclamationMarks("!!"), "Input: " + "!!");
+    Assert.AreEqual("Hi", Kata.RemoveExclamationMarks("Hi!"), "Input: " + "Hi!");
+    Assert.AreEqual("?", Kata.RemoveExclamationMarks("!?!"), "Input: " + "!?!");
+  }
+  
+  [Test]
+  public static void RandomTests()
+  {
+    Random r = new Random();
+    for (int i = 0; i < RandomTestsCount; i++)
+    {
+      string input = GetRandomString(r);
+      Assert.AreEqual(Solution(input), Kata.RemoveExclamationMarks(input), "Input: " + input);
+    }
+  }
+  
+  private static string Solution(string s)
+  {
+    return s.Replace("!", "");
+  }
+  
+  private static string GetRandomString(Random r)
+  {
+    int length = r.Next(MinRandomStringLength, MaxRandomStringLength);
+    StringBuilder result = new StringBuilder();
+    for(int i = 0; i < length; i++)
+    {
+      result.Append(AllowedChars[r.Next(0, AllowedChars.Length)]);
+    }
+    return result.ToString();
+  }
+}
