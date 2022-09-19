@@ -1,0 +1,107 @@
+/*Challenge link:https://www.codewars.com/kata/54b42f9314d9229fd6000d9c/train/csharp
+Question:
+The goal of this exercise is to convert a string to a new string where each character in the new string is "(" if that character appears only once in the original string, or ")" if that character appears more than once in the original string. Ignore capitalization when determining if a character is a duplicate.
+
+Examples
+"din"      =>  "((("
+"recede"   =>  "()()()"
+"Success"  =>  ")())())"
+"(( @"     =>  "))((" 
+Notes
+Assertion messages may be unclear about what they display in some languages. If you read "...It Should encode XXX", the "XXX" is the expected result, not the input!
+
+/*
+
+//***************Solution********************
+//convert the word to lower case
+//select current character x, covert word to lower case
+//if current character x is the same as the next character y, count +1
+//if count is equal to 1, set x to '(', else ')'
+//convert to array and return the result
+//simiplfied into one line by using an Enumerable methods.
+
+using System.Linq;
+
+public class Kata
+{
+  public static string DuplicateEncode(string word)=>
+    new string(word.ToLower()
+               .Select(x => word.ToLower().Count(y => x == y) == 1 ? '(' : ')')
+               .ToArray());
+}
+
+
+//****************Sample Test*****************
+namespace Solution 
+{
+  using NUnit.Framework;
+  using System;
+  using System.Collections.Generic;
+  using System.Linq;
+
+  [TestFixture]
+  public class KataTests
+  {
+    [Test]
+    public void BasicTests()
+    {
+      Assert.AreEqual("(((", Kata.DuplicateEncode("din"));
+      Assert.AreEqual("()()()", Kata.DuplicateEncode("recede"));
+      Assert.AreEqual(")())())", Kata.DuplicateEncode("Success"), "should ignore case");
+      Assert.AreEqual("))((", Kata.DuplicateEncode("(( @"));
+      Assert.AreEqual("()(((())())", Kata.DuplicateEncode("CodeWarrior"));
+      Assert.AreEqual(")()))()))))()(", Kata.DuplicateEncode("Supralapsarian"),"should ignore case");
+      Assert.AreEqual("))))))", Kata.DuplicateEncode("iiiiii"),"duplicate-only-string");
+    }
+    
+    [Test]
+    public void ParenthesesTests()
+    {
+      Assert.AreEqual("))((", Kata.DuplicateEncode("(( @"));
+      Assert.AreEqual(")))))(", Kata.DuplicateEncode(" ( ( )"));
+    }
+    
+    [Test]
+    public void RandomTests()
+    {
+      var rand = new Random();
+      
+      Func<string, string> myDuplicateEncode = delegate (string word)
+      {
+        Dictionary<char, int> dict = new Dictionary<char, int>();
+        for(int i=0;i<word.Length;i++)
+        {
+          if(!dict.ContainsKey(char.ToLower(word[i])))
+          {
+            dict.Add(char.ToLower(word[i]), 0);
+          }
+          dict[char.ToLower(word[i])]++;      
+        }
+        string result = "";
+    
+        for(var i=0;i<word.Length;i++)
+        {
+          if(dict[char.ToLower(word[i])] == 1)
+          {
+            result+= "(";
+          }
+          else
+          {
+            result+= ")";
+          }
+        }
+    
+        return result;
+      };
+      
+      for(int r=0;r<10;r++)
+      {
+        var length = rand.Next(10,21);
+        var chars = "abcdeFGHIJklmnOPQRSTuvwxyz() @!";
+        var word = string.Concat(Enumerable.Range(0, length).Select(a => chars[rand.Next(0, chars.Length)]));
+              
+        Assert.AreEqual(myDuplicateEncode(word), Kata.DuplicateEncode(word));
+      }
+    }
+  }
+}
