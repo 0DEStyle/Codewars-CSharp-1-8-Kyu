@@ -60,3 +60,6 @@ public static string Bmi(double w, double h) => (w = w / h / h) > 30 ? "Obese" :
 Linq Max (seek 7 & 8 Kyu 50_Expressions Matter)
 public static int ExpressionsMatter(int a, int b, int c) => new[] { a+b+c, a+b*c, a*b+c, a*b*c, (a+b)*c, a*(b+c)}.Max();
 
+Replace Repeated Character (seek 6 Kyu 014_Duplicate Encoder)
+public static string DuplicateEncode(string word)=> new string(word.ToLower() .Select(x => word.ToLower().Count(y => x == y) == 1 ? '(' : ')').ToArray());
+
