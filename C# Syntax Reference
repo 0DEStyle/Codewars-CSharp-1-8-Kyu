@@ -56,3 +56,7 @@ public static int find_it(int[] seq) => seq.First(x => seq.Count(y => y == x) % 
 
 Example of how to set multiple conditions in a Lambda Expression (calculate BMI)
 public static string Bmi(double w, double h) => (w = w / h / h) > 30 ? "Obese" : w > 25 ? "Overweight" : w > 18.5 ? "Normal" : "Underweight";
+
+Linq Max (seek 7 & 8 Kyu 50_Expressions Matter)
+public static int ExpressionsMatter(int a, int b, int c) => new[] { a+b+c, a+b*c, a*b+c, a*b*c, (a+b)*c, a*(b+c)}.Max();
+
