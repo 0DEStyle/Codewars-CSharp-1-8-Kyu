@@ -63,3 +63,11 @@ public static int ExpressionsMatter(int a, int b, int c) => new[] { a+b+c, a+b*c
 Replace Repeated Character (seek 6 Kyu 014_Duplicate Encoder)
 public static string DuplicateEncode(string word)=> new string(word.ToLower() .Select(x => word.ToLower().Count(y => x == y) == 1 ? '(' : ')').ToArray());
 
+- Null - 
+Check Null (seek 6 Kyu 016_Simple Encryption)
+string.IsNullOrWhiteSpace(text)
+string.IsNullOrEmpty(text)
+if (string.IsNullOrEmpty(text) || n <= 0) { return text; }
+text == null
+
+
