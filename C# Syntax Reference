@@ -13,6 +13,12 @@ public static string RemoveExclamationMarks(string s) => Regex.Replace(s,@"!", "
 or
 public static string RemoveExclamationMarks(string s) => s.Replace("!", "");
 
+Break Camel Case (seek 6 Kyu 018_Break camelCase)
+public static string BreakCamelCase(string str) => string.Concat(str.Select(c => Char.IsUpper(c) ? " " + c : c.ToString()));
+or using Regex
+public static string BreakCamelCase(string str)=> new Regex("([A-Z])").Replace(str, " $0");
+
+
 - Array -
 
 Declare Array
