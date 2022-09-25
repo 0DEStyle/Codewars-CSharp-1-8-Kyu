@@ -7,7 +7,7 @@ Example
 "identifier"   =>  "identifier"
 ""             =>  ""
 
-/*
+*/
 
 //***************Solution********************
 //Solution 1
