@@ -10,7 +10,7 @@ longest(a, b) -> "abcdefklmopqwxy"
 a = "abcdefghijklmnopqrstuvwxyz"
 longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
 
-/*
+*/
 
 //***************Solution********************
 //Combine both string s1 and s2
