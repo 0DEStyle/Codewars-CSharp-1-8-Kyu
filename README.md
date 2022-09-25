@@ -2,15 +2,15 @@
 ## C# Solutions
 ⭐Date started: August 9, 2022
 
-⭐This is a repository for Codewars C# challenge solutions. 
-Versions 8.0 (.Net Core 3.1) 
+⭐This is a repository for Codewars C# challenge solutions. <br />
+Versions 8.0 (.Net Core 3.1) <br />
 Test Frameworks NUnit <br />
 
-⭐All solutions are programmed by ODEStyle, excluded Unit test.
-You're welcome to use the solutions as reference to solve the problem(some algorithms might not be optimal).
+⭐All solutions are programmed by ODEStyle, excluded Unit test.<br />
+You're welcome to use the solutions as reference to solve the problem(some algorithms might not be optimal).<br />
 Link to Codewars Profile: https://www.codewars.com/users/0DE <br />
 
-⭐You can find challenge link and question at the start of the file,
+⭐You can find challenge link and question at the start of the file,<br />
 then solutions in the middle and test cases at the very end. <br />
 ![alt text](https://github.com/0DEStyle/Codewars-Challenges-/blob/main/Challenge%20Format.png)
 
