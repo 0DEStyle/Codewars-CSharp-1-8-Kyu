@@ -25,7 +25,7 @@ Have fun coding it and please don't forget to vote and rank this kata! :-)
 
 
 
-/*
+*/
 
 //***************Solution********************
 using System;
