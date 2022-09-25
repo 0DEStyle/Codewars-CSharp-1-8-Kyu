@@ -1,3 +1,5 @@
+Note: This is a reference document that includes useful snippet of codes that perform small tasks. It is constantly being updated as I learn.
+
 - Print out Array -
 Console.WriteLine(String.Join(" ", test).ToArray());
 
