@@ -1,5 +1,9 @@
 Note: This is a reference document that includes useful snippet of codes that perform small tasks. It is constantly being updated as I learn.
 
+- Data Type - 
+Nullable int
+int? test = null;
+
 - Print out Array -
 Console.WriteLine(String.Join(" ", test).ToArray());
 
@@ -32,6 +36,11 @@ string[] a = new string[] {0};
 Convert an Array to List
 a = b.ToList();
 
+Dynamic 2D array (Seek 6 Kyu 019_Logistic Map)
+var a = new int[height, width];
+Print out 2D array
+Console.WriteLine(String.Join(" ", array2D.Cast<int>()));
+
 - List -
 Library
 using System.Collections.Generic;
@@ -42,6 +51,18 @@ Empty List
 List<double> num = new List<double>();
 Convert an List to Array
 a = b.ToArray();
+
+Nested/2D list (ref https://www.youtube.com/watch?v=6-cuxfD3lvg)
+List<List<int>> LogisticMap = new List<List<int>>();
+LogisticMap.Add(new List<int> { 1, 2, 3 });
+LogisticMap.Add(new List<int> { 4, 5, 6 });
+
+foreach (var list in LogisticMap){
+    //print list //Console.WriteLine(String.Join(" ", list));
+    foreach (var item in list)
+        Console.WriteLine(String.Join(" ", item)); //print items inside list
+}
+
 
 
 - Ternary Sign -
