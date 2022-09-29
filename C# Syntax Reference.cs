@@ -97,6 +97,12 @@ public static int Stray(int[] numbers) => numbers.Aggregate((a, b) => a ^ b);
 or
 public static int Stray(int[] numbers) => numbers.GroupBy(a => a).Single(b => b.Count() == 1).Key;
 
+For Loop with Linq
+Enumerable.Range(start, count)...
+
+If statement with Linq
+.Where(x => !someString.Contains("5"))...
+
 - Null - 
 Check Null (seek 6 Kyu 016_Simple Encryption)
 string.IsNullOrWhiteSpace(text)
