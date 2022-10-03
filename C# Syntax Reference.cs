@@ -110,4 +110,6 @@ string.IsNullOrEmpty(text)
 if (string.IsNullOrEmpty(text) || n <= 0) { return text; }
 text == null
 
+check Null for int array
+return (input == null || input.Length ==0) ? new int[0] : new int[] { input.Count(o => o > 0), input.Where(o => o < 0).Sum() };
 
