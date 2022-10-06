@@ -96,6 +96,9 @@ Linq Find stray number (seek 7 & 8 Kyu 051_Find the stray number)
 public static int Stray(int[] numbers) => numbers.Aggregate((a, b) => a ^ b);
 or
 public static int Stray(int[] numbers) => numbers.GroupBy(a => a).Single(b => b.Count() == 1).Key;
+                
+Sum the first 2 elements using Take(2) Linq
+public static int sumTwoSmallestNumbers(int[] numbers => numbers.OrderBy(i => i).Take(2).Sum();
 
 For Loop with Linq
 Enumerable.Range(start, count)...
