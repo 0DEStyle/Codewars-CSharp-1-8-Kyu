@@ -115,4 +115,13 @@ text == null
 
 check Null for int array
 return (input == null || input.Length ==0) ? new int[0] : new int[] { input.Count(o => o > 0), input.Where(o => o < 0).Sum() };
+                                        
+                                        
+                                        
+perform arithmetic using System.Data (Seek 7 & 8 Kyu 060_Basic Mathematical Operations.cs)
+using System;
+using System.Data;
+
+public static class Program{
+  public static double basicOp(char op, double a, double b) => Convert.ToDouble(new DataTable().Compute($"{a}{op}{b}", ""));}
 
