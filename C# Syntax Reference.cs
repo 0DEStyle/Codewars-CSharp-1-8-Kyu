@@ -100,6 +100,9 @@ public static int Stray(int[] numbers) => numbers.GroupBy(a => a).Single(b => b.
 Sum the first 2 elements using Take(2) Linq
 public static int sumTwoSmallestNumbers(int[] numbers => numbers.OrderBy(i => i).Take(2).Sum();
 
+Order zero to the end of array Linq (Seek 5kyu 030_Moving Zeros To The End)
+public static int[] MoveZeroes(int[] arr) =>  arr.OrderBy(x => x==0).ToArray();
+                                        
 For Loop with Linq
 Enumerable.Range(start, count)...
 
