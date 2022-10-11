@@ -10,8 +10,8 @@ Kata.PigIt("Hello world !");     // elloHay orldway !
 //***************Solution********************
 
 /*
-if first pattern is a character, and last pattern (except \n) is a character
-replace first character with last($2), replace last character with first($1), add ay to the end
+if first pattern is a character(\w), and last pattern (\w*, but except \n) is a character
+"$2$1" set the first word character to the end. "ay" adds ay to the end.
 Then simiplfied into one line by using an Lambda expression with Enumerable methods.
 */
 using System.Text.RegularExpressions;
