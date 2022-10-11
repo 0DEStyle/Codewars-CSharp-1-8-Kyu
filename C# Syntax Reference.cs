@@ -127,4 +127,15 @@ using System.Data;
 
 public static class Program{
   public static double basicOp(char op, double a, double b) => Convert.ToDouble(new DataTable().Compute($"{a}{op}{b}", ""));}
+                                        
+                                   
+Regex
+ignore \
+@"\b(\w)"
+or 
+"\b(\\w)"
+
+set first character to the end and add ay (Seek 5 Kyu 040_Simple Pig Latin)
+public static string PigIt(string str) =>Regex.Replace(str, @"(\w)(\w*)", "$2$1ay");
+
 
