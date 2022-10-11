@@ -129,7 +129,8 @@ public static class Program{
   public static double basicOp(char op, double a, double b) => Convert.ToDouble(new DataTable().Compute($"{a}{op}{b}", ""));}
                                         
                                    
-Regex
+Regex 
+Code reference : https://denhamcoder.files.wordpress.com/2019/11/110719_1134_netregexche1.png
 ignore \
 @"\b(\w)"
 or 
