@@ -24,6 +24,10 @@ public static string BreakCamelCase(string str) => string.Concat(str.Select(c =>
 or using Regex
 public static string BreakCamelCase(string str)=> new Regex("([A-Z])").Replace(str, " $0");
 
+Format example (Seek 5 Kyu 006_ Human Readable Time)
+ public static string GetReadableTime(int seconds) => string.Format("{0:d2}:{1:d2}:{2:d2}", seconds / 3600, seconds / 60 % 60, seconds % 60);
+or
+ public static string GetReadableTime(int seconds) => $"{seconds / 3600:00}:{seconds / 60 % 60:00}:{seconds % 60:00}";
 
 - Array -
 
