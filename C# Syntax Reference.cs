@@ -4,6 +4,11 @@ Note: This is a reference document that includes useful snippet of codes that pe
 Nullable int
 int? test = null;
 
+Int to Hex conversion(Seek 5 Kyu 007_RGB To Hex Conversion)
+r.ToString("X2"); //X2 means hex letter in capital(x is lowercase), with 2 digits placement.
+or
+$"{(r > 255 ? 255 : r < 0 ? 0 : r):X2}"
+
 - Print out Array -
 Console.WriteLine(String.Join(" ", test).ToArray());
 
@@ -90,6 +95,7 @@ public static int find_it(int[] seq) => seq.First(x => seq.Count(y => y == x) % 
 Example of how to set multiple conditions in a Lambda Expression (calculate BMI)
 public static string Bmi(double w, double h) => (w = w / h / h) > 30 ? "Obese" : w > 25 ? "Overweight" : w > 18.5 ? "Normal" : "Underweight";
 
+- Linq -
 Linq Max (seek 7 & 8 Kyu 050_Expressions Matter)
 public static int ExpressionsMatter(int a, int b, int c) => new[] { a+b+c, a+b*c, a*b+c, a*b*c, (a+b)*c, a*(b+c)}.Max();
 
@@ -124,7 +130,7 @@ check Null for int array
 return (input == null || input.Length ==0) ? new int[0] : new int[] { input.Count(o => o > 0), input.Where(o => o < 0).Sum() };
                                         
                                         
-                                        
+- System.Data -                                        
 perform arithmetic using System.Data (Seek 7 & 8 Kyu 060_Basic Mathematical Operations.cs)
 using System;
 using System.Data;
@@ -133,7 +139,7 @@ public static class Program{
   public static double basicOp(char op, double a, double b) => Convert.ToDouble(new DataTable().Compute($"{a}{op}{b}", ""));}
                                         
                                    
-Regex 
+- Regex -
 Code reference : https://denhamcoder.files.wordpress.com/2019/11/110719_1134_netregexche1.png
 ignore \
 @"\b(\w)"
