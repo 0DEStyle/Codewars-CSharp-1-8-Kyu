@@ -19,6 +19,11 @@ int firstDigit = (int)(Value.ToString()[0]) - 48;
 int firstDigit = (int)(Value / Math.Pow(10, (int)Math.Floor(Math.Log10(Value))));
 
 - String Manuipulation - 
+ Check ending charcter of a string
+if(temp.EndsWith(' '))
+ Remove ending character of a string
+temp = temp.TrimEnd();
+
 Remove character from string (seek 048_Remove exclamation marks)
 public static string RemoveExclamationMarks(string s) => Regex.Replace(s,@"!", "");
 or
@@ -42,6 +47,10 @@ Empty array
 string[] a = new string[] { };
 or
 string[] a = new string[] {0};
+
+Split a string into array elements
+return arr = temp.Split(' ');
+
 Convert an Array to List
 a = b.ToList();
 
