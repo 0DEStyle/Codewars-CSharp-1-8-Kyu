@@ -75,6 +75,14 @@ var a = new int[height, width];
 Print out 2D array
 Console.WriteLine(String.Join(" ", array2D.Cast<int>()));
 
+Combine two 1D arrays into 2d arrays
+string[,] arr3 = new string[2,arr.Length];
+for(int i = 0; i < arr.Length; i++)
+{
+    arr3[0, i] = arr[i];
+    arr3[1, i] = arr2[i];
+}
+
 - List -
 Library
 using System.Collections.Generic;
