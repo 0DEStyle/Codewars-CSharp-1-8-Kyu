@@ -156,6 +156,9 @@ public static int sumTwoSmallestNumbers(int[] numbers => numbers.OrderBy(i => i)
 Order zero to the end of array Linq (Seek 5kyu 030_Moving Zeros To The End)
 public static int[] MoveZeroes(int[] arr) =>  arr.OrderBy(x => x==0).ToArray();
                                         
+SortBy, ThenBy (Seek 5 Kyu 011_Weight for weight Solution 2)
+public static string orderWeight(string strng)  => string.Join(" ", strng.Split().OrderBy(s => s.Sum(char.GetNumericValue)).ThenBy(x => x));
+                                        
 For Loop with Linq
 Enumerable.Range(start, count)...
 
