@@ -44,9 +44,10 @@ You can see examples for your language in "Sample Tests".
 */
 
 //***************Solution********************
-
-//Then simiplfied into one line by using an Lambda expression with Enumerable methods.
-//Iterative solution, not efficient
+//iteration from the start, shift the a and b each iteration
+//if solution of product is possible, return in array format {a,b,1}, where 1 means true.
+//if solution of product is not possible, return in array format {a,b,0}, where 0 means false.
+//Iterative solution, not time efficient
 public class ProdFib {
       public static ulong[] productFib(ulong prod) {
         ulong a = 0, b = 1, newB = 0;
