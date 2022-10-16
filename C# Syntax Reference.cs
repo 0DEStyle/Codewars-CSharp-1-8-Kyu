@@ -105,8 +105,18 @@ foreach (var list in LogisticMap){
         Console.WriteLine(String.Join(" ", item)); //print items inside list
 }
 
+List with 2 fields (Seek 5 Kyu 011_Weight for weight)
+List<KeyValuePair<string, int>> list = new List<KeyValuePair<string, int>>();
+                
+Add values into a 2 fields list <string,int>
+list.Add(new KeyValuePair<string, int>(arr[i], sum));
 
-
+Order a 2 fields list
+var listordered = list.OrderBy(x => x.Value).ThenBy(x=> x.Key);
+                
+Print out the result from a 2 fields list
+Console.WriteLine(string.Join(" ", listordered.Select(x => x.Key).ToList()));
+                
 - Ternary Sign -
 return n == 0 ? new double[]{0} : res;
 or Lambda expressions
