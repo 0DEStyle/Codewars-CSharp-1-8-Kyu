@@ -181,5 +181,18 @@ or
 
 set first character to the end and add ay (Seek 5 Kyu 040_Simple Pig Latin)
 public static string PigIt(string str) =>Regex.Replace(str, @"(\w)(\w*)", "$2$1ay");
+                                        
+- Dictionary - 
+using System.Collections.Generic;
+IDictionary<string, int> weight = new Dictionary<string, int>();
+weight.Add(arr[i], sum);
+                                        
+To print out value in dictionary
+foreach (KeyValuePair<string, int> kvp in weight)
+    Console.WriteLine("Key: {0}, Value: {1}", kvp.Key, kvp.Value);               
 
+To sort dictionary by value
+var ordered = weight.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
 
+To print out values in oneline
+Console.WriteLine(string.Join(" ",ordered.Keys.ToArray())); 
