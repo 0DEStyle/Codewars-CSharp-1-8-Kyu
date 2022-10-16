@@ -9,6 +9,18 @@ r.ToString("X2"); //X2 means hex letter in capital(x is lowercase), with 2 digit
 or
 $"{(r > 255 ? 255 : r < 0 ? 0 : r):X2}"
 
+ - Assigning -
+To assign 2 values in one line, instead of:
+newB = a + b;
+a = b;
+b = newB;
+Do the following:
+(a, b) = (b, a + b);
+
+To assign multiple elements into array using one line
+ulong[] temp = {a,b,1};
+ 
+ 
 - Print out Array -
 Console.WriteLine(String.Join(" ", test).ToArray());
 
@@ -17,6 +29,8 @@ int firstDigit = number.ToString().Substring(0,1)
 int firstTwoDigits = number.ToString().Substring(0,2);
 int firstDigit = (int)(Value.ToString()[0]) - 48;
 int firstDigit = (int)(Value / Math.Pow(10, (int)Math.Floor(Math.Log10(Value))));
+
+
 
 - String Manuipulation - 
  Check ending charcter of a string
@@ -38,6 +52,8 @@ Format example (Seek 5 Kyu 006_ Human Readable Time)
  public static string GetReadableTime(int seconds) => string.Format("{0:d2}:{1:d2}:{2:d2}", seconds / 3600, seconds / 60 % 60, seconds % 60);
 or
  public static string GetReadableTime(int seconds) => $"{seconds / 3600:00}:{seconds / 60 % 60:00}:{seconds % 60:00}";
+
+
 
 - Array -
 
