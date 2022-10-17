@@ -159,6 +159,17 @@ public static int[] MoveZeroes(int[] arr) =>  arr.OrderBy(x => x==0).ToArray();
 SortBy, ThenBy (Seek 5 Kyu 011_Weight for weight Solution 2)
 public static string orderWeight(string strng)  => string.Join(" ", strng.Split().OrderBy(s => s.Sum(char.GetNumericValue)).ThenBy(x => x));
                                         
+GroupBy example (Seek 5 Kyu 012_First non-repeating character Solution 2 and 3)
+//"GroupBy(char.ToLower)" is the same as "GroupBy(c => char.ToLower(c))" 
+public class Kata{
+  public static string FirstNonRepeatingLetter(string s) =>
+             s.GroupBy(char.ToLower)
+            .Where(gr => gr.Count() == 1)
+            .Select(x => x.First().ToString())
+            .DefaultIfEmpty("")
+            .First();
+            }
+                                        
 For Loop with Linq
 Enumerable.Range(start, count)...
 
@@ -175,6 +186,18 @@ text == null
 check Null for int array
 return (input == null || input.Length ==0) ? new int[0] : new int[] { input.Count(o => o > 0), input.Where(o => o < 0).Sum() };
                                         
+Null Conditional ?. if one operation in a chain of conditions returns null, the rest of the chain doesn't execute.
+//ref https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/member-access-operators
+
+Null Coalescing Operator ?? doesn't evaluate right-hand operation if the left-hand operand evalutes to non-null.
+//ref https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/operators/null-coalescing-operator
+                                        
+Example of using Null Conditional and Null Coalescing Operator (Seek 5 Kyu 012_First non-repeating character Solution 3)
+public class Kata
+{
+    public static string FirstNonRepeatingLetter(string s) =>
+    s.GroupBy(char.ToLower).FirstOrDefault(_ => _.Count() == 1)?.First().ToString() ?? string.Empty;
+}
                                         
 - System.Data -                                        
 perform arithmetic using System.Data (Seek 7 & 8 Kyu 060_Basic Mathematical Operations.cs)
