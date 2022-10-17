@@ -1,5 +1,9 @@
 Note: This is a reference document that includes useful snippet of codes that perform small tasks. It is constantly being updated as I learn.
 
+- return bool -
+ The expression below return value of true/false based on the program(2 ways).
+ return str2.Length == 0;
+
 - Data Type - 
 Nullable int
 int? test = null;
@@ -42,6 +46,8 @@ Remove character from string (seek 048_Remove exclamation marks)
 public static string RemoveExclamationMarks(string s) => Regex.Replace(s,@"!", "");
 or
 public static string RemoveExclamationMarks(string s) => s.Replace("!", "");
+or
+str = str.Remove(str.IndexOf(somech.ToString()), 1);
 
 Break Camel Case (seek 6 Kyu 018_Break camelCase)
 public static string BreakCamelCase(string str) => string.Concat(str.Select(c => Char.IsUpper(c) ? " " + c : c.ToString()));
@@ -53,6 +59,8 @@ Format example (Seek 5 Kyu 006_ Human Readable Time)
 or
  public static string GetReadableTime(int seconds) => $"{seconds / 3600:00}:{seconds / 60 % 60:00}:{seconds % 60:00}";
 
+get all distinct characters
+string uniquestr1 = new String(str1.Distinct().ToArray());
 
 
 - Array -
