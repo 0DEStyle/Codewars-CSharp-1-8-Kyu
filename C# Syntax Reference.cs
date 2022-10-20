@@ -27,6 +27,11 @@ ulong[] temp = {a,b,1};
  
 - Print out Array -
 Console.WriteLine(String.Join(" ", test).ToArray());
+public static string Solution(string str) => string.Join("", str.Reverse().Select(x => x.ToString()).ToArray());
+or
+return string.Concat(str.Reverse());
+or
+return new string(str.ToArray().Reverse().ToArray());
 
 - Get first digit - 
 int firstDigit = number.ToString().Substring(0,1)
