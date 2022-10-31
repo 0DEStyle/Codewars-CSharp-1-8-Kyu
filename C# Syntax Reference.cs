@@ -245,3 +245,6 @@ var ordered = weight.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value
 
 To print out values in oneline
 Console.WriteLine(string.Join(" ",ordered.Keys.ToArray())); 
+                                        
+Get value by key (Seek 8 Kyu 072_Welcome!)
+return myDictionary.ContainsKey(language) ? myDictionary[language] : myDictionary["english"];
