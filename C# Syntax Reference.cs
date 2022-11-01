@@ -258,3 +258,15 @@ public static string UInt32ToIP(uint ip) =>
                 (byte)((ip>>16) & 0xFF) ,
                 (byte)((ip>>8)  & 0xFF) ,
                 (byte)( ip & 0xFF)});
+
+                                        
+Switching syntax "Convert" to "Change"
+using Change=System.Convert;
+
+public class Kata
+{
+  public static int Calculate(string num1, string num2)
+  {
+    return Change.ToInt32(num1,2)+Change.ToInt32(num2,2);
+  }
+}
