@@ -248,3 +248,13 @@ Console.WriteLine(string.Join(" ",ordered.Keys.ToArray()));
                                         
 Get value by key (Seek 8 Kyu 072_Welcome!)
 return myDictionary.ContainsKey(language) ? myDictionary[language] : myDictionary["english"];
+                                        
+int32 to IPv4 (seek 019_int32 to IPv4)
+public static string UInt32ToIP(uint ip) => IPAddress.Parse(ip.ToString()).ToString();
+or using bit shifting
+public static string UInt32ToIP(uint ip) =>
+    string.Join(".", new byte[] {
+                (byte)((ip>>24) & 0xFF) ,
+                (byte)((ip>>16) & 0xFF) ,
+                (byte)((ip>>8)  & 0xFF) ,
+                (byte)( ip & 0xFF)});
