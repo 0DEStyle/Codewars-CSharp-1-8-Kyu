@@ -8,6 +8,9 @@ Note: This is a reference document that includes useful snippet of codes that pe
 Nullable int
 int? test = null;
 
+Check if object is integer (Seek 7 Kyu 073_List Filtering)
+public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)=> listOfItems.OfType<int>();
+
 Int to Hex conversion(Seek 5 Kyu 007_RGB To Hex Conversion)
 r.ToString("X2"); //X2 means hex letter in capital(x is lowercase), with 2 digits placement.
 or
