@@ -27,6 +27,7 @@ GrεεκL33t("Kata") = "κατα"
 
 //***************Solution********************
 
+//Solution 1
 /*                             `-:/+++++++/++:-.                                          
                             .odNMMMMMMMMMMMMMNmdo-`                                      
                            +mMMNmdhhhhhhhhhdmNMMMNd/`                                    
@@ -58,7 +59,8 @@ GrεεκL33t("Kata") = "κατα"
                          `/hmNNNNNmdh/`                                                  
                             `.---..`
 */
-
+//check if dictionary contains key, then extra the corresponding value
+//return the result.
 using System.Collections.Generic;
 
 public class L33TGreekCase{
@@ -78,6 +80,27 @@ public class L33TGreekCase{
   }
 }
 
+//solution 2
+//get character by using the index of string, then return the result.
+class L33TGreekCase
+{
+  public static string GreekL33t(string str)
+  {
+    string result = "",
+      abc  =  "abdeiknoprtuvwxy",
+      greek = "αβδεικηθρπτμυωχγ";
+    
+    foreach (char ch in str.ToLower())
+    {
+      if (abc.Contains(ch))
+        result += greek[abc.IndexOf(ch)];
+      else 
+        result += ch;
+    }
+    
+    return result;
+  }
+}
 //****************Sample Test*****************
 namespace Solution 
 {
