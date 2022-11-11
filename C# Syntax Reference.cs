@@ -16,6 +16,8 @@ r.ToString("X2"); //X2 means hex letter in capital(x is lowercase), with 2 digit
 or
 $"{(r > 255 ? 255 : r < 0 ? 0 : r):X2}"
 
+ - Print tricks -
+ var str2 = new string('x', (n - 1) / 2) + "*\n"; //out put : xxxxxxx*
  - Assigning -
 To assign 2 values in one line, instead of:
 newB = a + b;
