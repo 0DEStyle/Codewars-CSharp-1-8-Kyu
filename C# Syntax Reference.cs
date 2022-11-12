@@ -191,6 +191,11 @@ public class Kata{
 For Loop with Linq
 Enumerable.Range(start, count)...
 
+Repeat (int element, int count)
+    public static int SequenceSum(int start, int end, int step) =>
+         start > end ? 0 : Enumerable.Repeat(start, (end - start) / step + 1).Select((x, index) => x + step * index).Sum();
+
+
 If statement with Linq
 .Where(x => !someString.Contains("5"))...
 
