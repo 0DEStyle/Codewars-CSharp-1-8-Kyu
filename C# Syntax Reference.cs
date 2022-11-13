@@ -15,6 +15,9 @@ Int to Hex conversion(Seek 5 Kyu 007_RGB To Hex Conversion)
 r.ToString("X2"); //X2 means hex letter in capital(x is lowercase), with 2 digits placement.
 or
 $"{(r > 255 ? 255 : r < 0 ? 0 : r):X2}"
+ 
+ int to char (not as ASCII, but the actual number itself)
+ (int)Char.GetNumericValue(x[0])
 
  - Print tricks -
  var str2 = new string('x', 7 + "*\n"; //out put : xxxxxxx*
