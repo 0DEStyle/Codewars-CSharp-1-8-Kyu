@@ -164,6 +164,9 @@ Example of how to set multiple conditions in a Lambda Expression (calculate BMI)
 public static string Bmi(double w, double h) => (w = w / h / h) > 30 ? "Obese" : w > 25 ? "Overweight" : w > 18.5 ? "Normal" : "Underweight";
 
 - Linq -
+Get Distinct number from array, order the number, parse the string into long
+public static long MinValue(int[] a) => long.Parse(string.Concat(a.Distinct().OrderBy(x => x)));
+
 Linq Max (seek 7 & 8 Kyu 050_Expressions Matter)
 public static int ExpressionsMatter(int a, int b, int c) => new[] { a+b+c, a+b*c, a*b+c, a*b*c, (a+b)*c, a*(b+c)}.Max();
 
