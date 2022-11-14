@@ -103,6 +103,10 @@ for(int i = 0; i < arr.Length; i++)
     arr3[0, i] = arr[i];
     arr3[1, i] = arr2[i];
 }
+                       
+- Exception -
+using System;
+ throw new ArgumentOutOfRangeException();
 
 - List -
 Library
