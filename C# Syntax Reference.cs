@@ -256,9 +256,24 @@ using System.Collections.Generic;
 IDictionary<string, int> weight = new Dictionary<string, int>();
 weight.Add(arr[i], sum);
                                         
+
+Dictionary example
+IDictionary<int, string> weight = new Dictionary<int, string>();
+var myDictionary = new Dictionary<int, string>()
+{
+    {1, "One"},
+    {2, "Two"},
+    {3, "Three"},
+}
+Console.WriteLine(myDictionary[1]);
+                                        
 To print out value in dictionary
 foreach (KeyValuePair<string, int> kvp in weight)
-    Console.WriteLine("Key: {0}, Value: {1}", kvp.Key, kvp.Value);               
+    Console.WriteLine("Key: {0}, Value: {1}", kvp.Key, kvp.Value);      
+                                        
+Without using Dictionary, the Lamda method (Seek 7-8 Kyu 097_Switch it Up)
+public static string SwitchItUp(int num)=> 
+    new string[]{"Zero", "One", "Two", "Three", "Four", "Five", "Six", "Seven", "Eight", "Nine"}[num];
 
 To sort dictionary by value
 var ordered = weight.OrderBy(x => x.Value).ToDictionary(x => x.Key, x => x.Value);
