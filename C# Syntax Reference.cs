@@ -32,7 +32,11 @@ Do the following:
 To assign multiple elements into array using one line
 ulong[] temp = {a,b,1};
  
- 
+- Time -
+compare time using DateTime.Parse() (Seek 7 & 8 Kyu 098_The Coupon Code)
+public static bool CheckCoupon(string enteredCode, string correctCode, string currentDate, string expirationDate) =>
+      enteredCode == correctCode && DateTime.Parse(currentDate) <= DateTime.Parse(expirationDate);
+                       
 - Print out Array -
 Console.WriteLine(String.Join(" ", test).ToArray());
 public static string Solution(string str) => string.Join("", str.Reverse().Select(x => x.ToString()).ToArray());
