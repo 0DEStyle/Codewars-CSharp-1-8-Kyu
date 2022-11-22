@@ -1,5 +1,6 @@
 Note: This is a reference document that includes useful snippet of codes that perform small tasks. It is constantly being updated as I learn.
 
+ 
 - return bool -
  The expression below return value of true/false based on the program(2 ways).
  return str2.Length == 0;
