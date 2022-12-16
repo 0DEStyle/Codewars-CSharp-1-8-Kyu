@@ -80,7 +80,10 @@ or
 get all distinct characters
 string uniquestr1 = new String(str1.Distinct().ToArray());
 
+Count the number of vowels (Seek 7 & 8 Kyu 121_Vowel Count)
+public static int GetVowelCount(string str) => str.Count("aeiouAEIOU".Contains);
 
+                       
 - Array -
 
 Declare Array
