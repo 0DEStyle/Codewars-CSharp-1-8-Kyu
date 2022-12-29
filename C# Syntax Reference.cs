@@ -213,6 +213,14 @@ Repeat (int element, int count)
     public static int SequenceSum(int start, int end, int step) =>
          start > end ? 0 : Enumerable.Repeat(start, (end - start) / step + 1).Select((x, index) => x + step * index).Sum();
 
+Where, with (x,i)
+
+var values = new List<int> { 100, 200, 300 };
+foreach (var v in values.Select((x, i) => (x, i))) // x is the value, i is the index
+    Console.WriteLine(v);
+//output: (100, 0),(200, 1),(300, 2)
+//(x, i+1): (100, 1), (200, 2), (300, 3)
+                                        
 
 If statement with Linq
 .Where(x => !someString.Contains("5"))...
