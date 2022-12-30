@@ -9,6 +9,11 @@ Note: This is a reference document that includes useful snippet of codes that pe
 Nullable int
 int? test = null;
 
+- adding single digit in string without convert to int -
+ //(Seek 6 Kyu 038_Reverse or rotate?)
+ foreach (string chunk in chunks)
+      if (chunk.Sum(c => (c - '0') * (c - '0')) % 2 == 0);
+
 Check if object is integer (Seek 7 Kyu 073_List Filtering)
 public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)=> listOfItems.OfType<int>();
 
@@ -55,6 +60,22 @@ int firstDigit = (int)(Value / Math.Pow(10, (int)Math.Floor(Math.Log10(Value))))
 
 
 - String Manuipulation - 
+//Create a new string using string builder (Seek 6 Kyu 038_Reverse or rotate?)
+using System.Text; //var result = new StringBuilder();
+
+//Insert a space in between string(str) of the string chunk size(sz) (Seek 6 Kyu 038_Reverse or rotate?)
+for (int i = size; i < str.Length; i += size + 1)
+      str = str.Insert(i, " ");
+                       
+//split the string into chunks and store in array (Seek 6 Kyu 038_Reverse or rotate?)
+    var chunks = str.Split().Where(x => x.Length == size);
+                       
+//reverse string
+string.Concat(chunk.Reverse());
+                       
+//Shift character to the left by 1, append anything after index 1 to the first letter
+result.Append(chunk.Substring(1) + chunk[0]);
+                       
  Check ending charcter of a string
 if(temp.EndsWith(' '))
  Remove ending character of a string
