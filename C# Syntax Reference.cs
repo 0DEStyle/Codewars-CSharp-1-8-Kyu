@@ -60,6 +60,10 @@ int firstDigit = (int)(Value / Math.Pow(10, (int)Math.Floor(Math.Log10(Value))))
 
 
 - String Manuipulation - 
+(Seek 7 & 8 Kyu 132_Sort and Star)
+//sort the string alphabtically, select the first letter and store as array, join each element with ***
+public static string TwoSort(string[] s)=> string.Join("***", s.OrderBy(a => a, StringComparer.Ordinal).First().ToArray());
+                       
 //Create a new string using string builder (Seek 6 Kyu 038_Reverse or rotate?)
 using System.Text; //var result = new StringBuilder();
 
