@@ -9,6 +9,10 @@ Note: This is a reference document that includes useful snippet of codes that pe
 Nullable int
 int? test = null;
 
+//biginterger power
+using System.Numerics;
+BigInteger.Pow(2, x)
+
 - adding single digit in string without convert to int -
  //(Seek 6 Kyu 038_Reverse or rotate?)
  foreach (string chunk in chunks)
@@ -137,6 +141,12 @@ for(int i = 0; i < arr.Length; i++)
     arr3[1, i] = arr2[i];
 }
                        
+Example of linq generate array
+Enumerable.Range(0, n+1).Select(x => BigInteger.Pow(2, x)).ToArray();         
+n = 0  ==> [1]        # [2^0]
+n = 1  ==> [1, 2]     # [2^0, 2^1]
+n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
+
 - Exception -
 using System;
  throw new ArgumentOutOfRangeException();
