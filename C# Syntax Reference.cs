@@ -112,6 +112,10 @@ string uniquestr1 = new String(str1.Distinct().ToArray());
 Count the number of vowels (Seek 7 & 8 Kyu 121_Vowel Count)
 public static int GetVowelCount(string str) => str.Count("aeiouAEIOU".Contains);
 
+//count smiley face pattern
+public static int CountSmileys(string[] smileys) => Regex.Matches(string.Join(" ",smileys), @"(?::|;)(?:-|~)?(\)|D)").Count();
+ or
+public static int CountSmileys(string[] smileys)=> smileys.Count(s => Regex.IsMatch(s, @"^[:;]{1}[~-]{0,1}[\)D]{1}$"));
                        
 - Array -
 
