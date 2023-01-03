@@ -116,6 +116,9 @@ public static int GetVowelCount(string str) => str.Count("aeiouAEIOU".Contains);
 public static int CountSmileys(string[] smileys) => Regex.Matches(string.Join(" ",smileys), @"(?::|;)(?:-|~)?(\)|D)").Count();
  or
 public static int CountSmileys(string[] smileys)=> smileys.Count(s => Regex.IsMatch(s, @"^[:;]{1}[~-]{0,1}[\)D]{1}$"));
+//Note that {1} is redundant and {0,1} is best written as ?. 
+ or
+public static int CountSmileys(string[] smileys) => Regex.Matches(string.Join(" ",smileys), "([:;][-~]?)[)D]").Count;
                        
 - Array -
 
