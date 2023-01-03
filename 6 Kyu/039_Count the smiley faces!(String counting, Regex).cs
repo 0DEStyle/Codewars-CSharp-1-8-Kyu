@@ -44,6 +44,13 @@ public static class Kata{
   public static int CountSmileys(string[] smileys)=> smileys.Count(s => Regex.IsMatch(s, @"^[:;]{1}[~-]{0,1}[\)D]{1}$"));
 }
 
+//solution 3
+using System.Text.RegularExpressions;
+
+public static class Kata{
+  public static int CountSmileys(string[] smileys) => Regex.Matches(string.Join(" ",smileys), "([:;][-~]?)[)D]").Count;
+}
+
 //****************Sample Test*****************
 namespace Solution {
   using System.Text.RegularExpressions;
