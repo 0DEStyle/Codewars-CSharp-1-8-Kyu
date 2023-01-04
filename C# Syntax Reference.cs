@@ -1,5 +1,29 @@
 Note: This is a reference document that includes useful snippet of codes that perform small tasks. It is constantly being updated as I learn.
 
+Switch case
+ //(Seek 7 & 8 Kyu Bartender, drinks!.cs)
+  public static string GetDrinkByProfession(string p) => p.ToLower() switch
+  {
+    "jabroni" => "Patron Tequila",
+    "school counselor" => "Anything with Alcohol",
+    "programmer" =>  "Hipster Craft Beer",
+    "bike gang member" => "Moonshine",
+    "politician" => "Your tax dollars",
+    "rapper" => "Cristal",
+    _ => "Beer" 
+  };
+
+using Lambda instead of ternary 
+  public static string GetDrinkByProfession(string p) => p.ToLower() switch
+  {
+    "jabroni" => "Patron Tequila",
+    "school counselor" => "Anything with Alcohol",
+    "programmer" =>  "Hipster Craft Beer",
+    "bike gang member" => "Moonshine",
+    "politician" => "Your tax dollars",
+    "rapper" => "Cristal",
+    _ => "Beer" 
+  };
  
 - return bool -
  The expression below return value of true/false based on the program(2 ways).
