@@ -88,6 +88,9 @@ int firstDigit = (int)(Value / Math.Pow(10, (int)Math.Floor(Math.Log10(Value))))
 
 
 - String Manuipulation - 
+//string interporlation
+public static string SayHello(string[] a, string b, string c) => $"Hello, {string.Join(" ",a)}! Welcome to {b}, {c}!";
+                       
 (Seek 7 & 8 Kyu 132_Sort and Star)
 //sort the string alphabtically, select the first letter and store as array, join each element with ***
 public static string TwoSort(string[] s)=> string.Join("***", s.OrderBy(a => a, StringComparer.Ordinal).First().ToArray());
