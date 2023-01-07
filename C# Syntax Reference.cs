@@ -54,6 +54,9 @@ $"{(r > 255 ? 255 : r < 0 ? 0 : r):X2}"
  (int)Char.GetNumericValue(x[0])
 
  - Print tricks -
+ String Interpolation
+ return $"Congratulations! You're going to have a {sperm == "XY" ? "son" : "daughter"}.";
+ 
  var str2 = new string('x', 7 + "*\n"; //out put : xxxxxxx*
  - Assigning -
 To assign 2 values in one line, instead of:
