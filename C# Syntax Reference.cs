@@ -1,7 +1,7 @@
 Note: This is a reference document that includes useful snippet of codes that perform small tasks. It is constantly being updated as I learn.
 
-Switch case
- //(Seek 7 & 8 Kyu Bartender, drinks!.cs)
+- Switch case -
+ //using Lambda instead of ternary (Seek 7 & 8 Kyu Bartender, drinks!.cs)
   public static string GetDrinkByProfession(string p) => p.ToLower() switch
   {
     "jabroni" => "Patron Tequila",
@@ -13,17 +13,6 @@ Switch case
     _ => "Beer" 
   };
 
-using Lambda instead of ternary 
-  public static string GetDrinkByProfession(string p) => p.ToLower() switch
-  {
-    "jabroni" => "Patron Tequila",
-    "school counselor" => "Anything with Alcohol",
-    "programmer" =>  "Hipster Craft Beer",
-    "bike gang member" => "Moonshine",
-    "politician" => "Your tax dollars",
-    "rapper" => "Cristal",
-    _ => "Beer" 
-  };
  
 - return bool -
  The expression below return value of true/false based on the program(2 ways).
@@ -52,6 +41,12 @@ $"{(r > 255 ? 255 : r < 0 ? 0 : r):X2}"
  
  int to char (not as ASCII, but the actual number itself)
  (int)Char.GetNumericValue(x[0])
+
+ //convert string array to int array
+ .Select(int.Parse).ToArray();
+
+//convert char array to int array
+.Select(a => a - '0')
 
  - Print tricks -
  String Interpolation
@@ -91,6 +86,9 @@ int firstDigit = (int)(Value / Math.Pow(10, (int)Math.Floor(Math.Log10(Value))))
 
 
 - String Manuipulation - 
+//Select a pattern, separate with string by 8 character, commonly used in reversing bits.
+Enumerable.Range(0, str.Length / 8).Select(i => str.Substring(i * 8, 8)).ToArray();
+                       
 //string interporlation
 public static string SayHello(string[] a, string b, string c) => $"Hello, {string.Join(" ",a)}! Welcome to {b}, {c}!";
                        
@@ -244,6 +242,11 @@ Example of how to set multiple conditions in a Lambda Expression (calculate BMI)
 public static string Bmi(double w, double h) => (w = w / h / h) > 30 ? "Obese" : w > 25 ? "Overweight" : w > 18.5 ? "Normal" : "Underweight";
 
 - Linq -
+//Join elements together with Aggregate instead of string.Join
+int[] data = new int[32] { 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0 };
+var str = data.Aggregate("",(i, j) => i + j);
+Console.WriteLine(string.Concat(str));
+                
 Get Distinct number from array, order the number, parse the string into long
 public static long MinValue(int[] a) => long.Parse(string.Concat(a.Distinct().OrderBy(x => x)));
 
