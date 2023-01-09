@@ -49,6 +49,16 @@ $"{(r > 255 ? 255 : r < 0 ? 0 : r):X2}"
 .Select(a => a - '0')
 
  - Print tricks -
+ //check if string is null or empty
+ public static string Hello(string name) => string.IsNullOrEmpty(name);
+
+ //first letter to uppercase
+using System.Globalization;
+public static string Hello(string name) => 
+    string.IsNullOrEmpty(name) ? 
+    "Hello, World!" : 
+    $"Hello, {CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name.ToLower())}!";
+
  String Interpolation
  return $"Congratulations! You're going to have a {sperm == "XY" ? "son" : "daughter"}.";
  
