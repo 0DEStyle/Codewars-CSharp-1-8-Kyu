@@ -343,6 +343,9 @@ public static class Program{
                                         
                                    
 - Regex -
+//return only lowercase letter, number and underscore, length between 4 to 16 character
+public static bool ValidateUsr(string username) => Regex.IsMatch(username, "^[a-z0-9_]{4,16}$");                 
+                                        
 Code reference : https://denhamcoder.files.wordpress.com/2019/11/110719_1134_netregexche1.png
 ignore \
 @"\b(\w)"
