@@ -10,7 +10,7 @@ Since Nessie is a master of disguise, the only way accurately tell is to look fo
 */
 
 //***************Solution********************
-
+//check if sentence contains certain words.
 //Then simiplfied into one line by using an Lambda expression with Enumerable methods.
 public static class Kata {
   public static bool IsLockNessMonster(string sentence) => 
