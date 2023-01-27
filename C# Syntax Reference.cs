@@ -18,6 +18,11 @@ Note: This is a reference document that includes useful snippet of codes that pe
  The expression below return value of true/false based on the program(2 ways).
  return str2.Length == 0;
 
+//call different functions based on condition, one line
+public static void If(bool condition, Action func1, Action func2) => (condition ? func1 : func2)();
+
+
+
 - Data Type - 
 Nullable int
 int? test = null;
