@@ -13,6 +13,17 @@ Note: This is a reference document that includes useful snippet of codes that pe
     _ => "Beer" 
   };
 
+- Pass Function as argument -
+//definition Func<Type of function , Type of argument>
+ //example
+
+ public  static string VertMirror(string strng) =>
+      string.Join("\n", strng.Split("\n").Select(x => new String(x.Reverse().ToArray())));
+  
+    public  static string HorMirror(string strng)=> 
+      string.Join("\n",strng.Split("\n").Reverse());
+  
+    public static string Oper(Func<string,string>fct, string s) => fct(s);
  
 - return bool -
  The expression below return value of true/false based on the program(2 ways).
