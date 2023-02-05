@@ -65,6 +65,9 @@ $"{(r > 255 ? 255 : r < 0 ? 0 : r):X2}"
 .Select(a => a - '0')
 
  - Print tricks -
+ //Linq return or print certain length of characters
+ return String.Join("", Enumerable.Repeat(character, text.Length));
+
  //check if string is null or empty
  public static string Hello(string name) => string.IsNullOrEmpty(name);
 
