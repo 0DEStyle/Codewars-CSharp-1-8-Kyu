@@ -47,6 +47,9 @@ BigInteger.Pow(2, x)
  foreach (string chunk in chunks)
       if (chunk.Sum(c => (c - '0') * (c - '0')) % 2 == 0);
 
+//check if a string is a digit
+public static bool IsDigit(string s)  => float.TryParse(s, out _);
+
 Check if object is integer (Seek 7 Kyu 073_List Filtering)
 public static IEnumerable<int> GetIntegersFromList(List<object> listOfItems)=> listOfItems.OfType<int>();
 
