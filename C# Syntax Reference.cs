@@ -433,3 +433,16 @@ public class Kata
     return Change.ToInt32(num1,2)+Change.ToInt32(num2,2);
   }
 }
+                                        
+- Object-oriented Programming OOP -
+ //Create a class Human
+//and from Human create 2 subclasses, Man and Woman
+
+//Create new Human Array where [0] is Man and [1] is Woman
+//Then simiplfied into one line by using an Lambda expression with Enumerable methods.
+public class God{
+  public static Human[] Create() => new Human[] {new Man(), new Woman()};
+}
+public class Human {}
+public class Man : Human {}
+public class Woman : Human {}
