@@ -367,6 +367,10 @@ public static class Program{
                                         
                                    
 - Regex -
+//Some options for Regex pattern. such as ignore case with (?i)
+//https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options
+public static int[] VowelIndices(string word) => Regex.Matches(word, "(?i)[aeiouy]").Select(m => m.Index + 1).ToArray();
+
 //return only lowercase letter, number and underscore, length between 4 to 16 character
 public static bool ValidateUsr(string username) => Regex.IsMatch(username, "^[a-z0-9_]{4,16}$");                 
                                         
