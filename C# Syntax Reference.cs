@@ -385,7 +385,11 @@ or
 
 set first character to the end and add ay (Seek 5 Kyu 040_Simple Pig Latin)
 public static string PigIt(string str) =>Regex.Replace(str, @"(\w)(\w*)", "$2$1ay");
-                                        
+                     
+Check vowels exist in object array without using Regex, then convert ASCII code to Char
+ public static object[] IsVow(object[] a) =>
+   a.Select(x => "aeiou".Contains(Convert.ToChar(x)) ? Convert.ToChar(x).ToString() : x).ToArray();
+
 - Dictionary - 
 using System.Collections.Generic;
 IDictionary<string, int> weight = new Dictionary<string, int>();
