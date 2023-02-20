@@ -32,6 +32,9 @@ Note: This is a reference document that includes useful snippet of codes that pe
 //call different functions based on condition, one line
 public static void If(bool condition, Action func1, Action func2) => (condition ? func1 : func2)();
 
+//Ternary operator combo with Console.WriteLine
+  public static void Main(string[] args) => Console.WriteLine("Hello World!");
+
 - Join arguments together with string.join -
     public static string buildString(string[] args) => $"I like {string.Join(", ", args)}!";
 
