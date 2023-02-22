@@ -187,6 +187,10 @@ public static int CountSmileys(string[] smileys)=> smileys.Count(s => Regex.IsMa
 public static int CountSmileys(string[] smileys) => Regex.Matches(string.Join(" ",smileys), "([:;][-~]?)[)D]").Count;
                        
 - Array -
+                       
+//remove first and last elements of array using [1..^1]
+return string.Join(" ", arr[1..^1]);
+                       
 //store array elements with equation in one line
 public static int[] Get_size(int w,int h,int d) => new int[] {2*(h*w + h*d + w*d), w*h*d};
                        
