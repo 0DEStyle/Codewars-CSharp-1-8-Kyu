@@ -377,6 +377,9 @@ public static class Program{
                                         
                                    
 - Regex -
+//replace a with b, and replace b with a
+public static string Switcheroo(string x) => Regex.Replace(x, "[ab]", m => m.Value == "a" ? "b" : "a");
+                                        
 //Some options for Regex pattern. such as ignore case with (?i)
 //https://learn.microsoft.com/en-us/dotnet/standard/base-types/regular-expression-options
 public static int[] VowelIndices(string word) => Regex.Matches(word, "(?i)[aeiouy]").Select(m => m.Index + 1).ToArray();
