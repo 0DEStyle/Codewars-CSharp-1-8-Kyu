@@ -16,6 +16,15 @@ public class DecTools {
   public static int Digits(ulong n) => n.ToString().Count(x=>x>=0);
 }
 
+//solution 2
+public class DecTools
+{
+  public static int Digits(ulong n)
+  {
+    return $"{n}".Length;
+  }
+}
+
 
 
 //****************Sample Test*****************
