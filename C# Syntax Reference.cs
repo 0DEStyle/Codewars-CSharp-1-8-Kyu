@@ -74,6 +74,9 @@ $"{(r > 255 ? 255 : r < 0 ? 0 : r):X2}"
 .Select(a => a - '0')
 
  - Print tricks -
+ //get the length of a number by converting to string using interpolation
+    return $"{n}".Length;
+
  //Linq return or print certain length of characters
  return String.Join("", Enumerable.Repeat(character, text.Length));
 
