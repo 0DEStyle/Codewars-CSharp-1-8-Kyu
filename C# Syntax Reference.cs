@@ -92,7 +92,8 @@ public static string Hello(string name) =>
 
  String Interpolation
  return $"Congratulations! You're going to have a {sperm == "XY" ? "son" : "daughter"}.";
- 
+ return $"At match {t[0]} - {t[1]}, {(s[0] == s[1] ? "teams played draw." : t[s[0] > s[1] ? 0 : 1] + " won!")}";
+
  var str2 = new string('x', 7 + "*\n"; //out put : xxxxxxx*
  - Assigning -
 To assign 2 values in one line, instead of:
