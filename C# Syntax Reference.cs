@@ -44,6 +44,9 @@ public static void If(bool condition, Action func1, Action func2) => (condition 
 Nullable int
 int? test = null;
 
+nullable type, pass an empty double
+public static double? ParseF(object s = null) => double.TryParse(s?.ToString(), out var result) ? result : (double?) null;
+  
 //biginterger power
 using System.Numerics;
 BigInteger.Pow(2, x)
