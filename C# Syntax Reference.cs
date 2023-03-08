@@ -194,6 +194,8 @@ public static int CountSmileys(string[] smileys)=> smileys.Count(s => Regex.IsMa
 public static int CountSmileys(string[] smileys) => Regex.Matches(string.Join(" ",smileys), "([:;][-~]?)[)D]").Count;
                        
 - Array -
+//Take the first n elements
+public static object[] TakeFirstElements(object[] array, int n = 1)=> array.Take(n).ToArray();
                        
 //remove first and last elements of array using [1..^1]
 return string.Join(" ", arr[1..^1]);
