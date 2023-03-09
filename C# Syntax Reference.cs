@@ -386,6 +386,9 @@ public static class Program{
                                         
                                    
 - Regex -
+//Check if string contains certain word, case insensitive
+public static bool SpeakEnglish(string sentence)=> Regex.IsMatch(sentence, "(?i)english");
+                                        
 //replace a with b, and replace b with a
 public static string Switcheroo(string x) => Regex.Replace(x, "[ab]", m => m.Value == "a" ? "b" : "a");
                                         
