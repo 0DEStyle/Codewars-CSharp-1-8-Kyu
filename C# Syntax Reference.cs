@@ -240,6 +240,10 @@ using System;
  throw new ArgumentOutOfRangeException();
 
 - List -
+//C# keyword to create a tuple using Tuple.Create (Seek 7 & 8 Kyu 242_ Ordered Count of Characters)
+//ref: https://learn.microsoft.com/en-us/dotnet/api/system.tuple.create?view=net-7.0
+public static List<Tuple<char, int>> OrderedCount(string input) => input.GroupBy(x=>x).Select(c => Tuple.Create(c.Key, c.Count())).ToList();
+                       
 Library
 using System.Collections.Generic;
 
