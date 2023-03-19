@@ -13,6 +13,16 @@ Note: This is a reference document that includes useful snippet of codes that pe
     _ => "Beer" 
   };
 
+//Switch case in one line
+        public static string DefineSuit(string card) =>
+            card[^1] switch
+            {
+                '♣' => "clubs",
+                '♦' => "diamonds",
+                '♥' => "hearts",
+                _ => "spades",
+            };
+
 - Pass Function as argument -
 //definition Func<Type of function , Type of argument>
  //example
