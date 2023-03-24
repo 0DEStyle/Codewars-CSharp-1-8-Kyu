@@ -351,6 +351,8 @@ public class Kata{
 For Loop with Linq
 Enumerable.Range(start, count)...
 return string.Join("\n", Enumerable.Range(1, 10).Select(i => $"{i} * {number} = {i * number}"));
+//Skip element with loop                                        
+xs.Skip(1).Where((x, i) => x % (i + 1) == 0).ToList();
 
 Repeat (int element, int count)
     public static int SequenceSum(int start, int end, int step) =>
