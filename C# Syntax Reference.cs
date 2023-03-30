@@ -403,6 +403,23 @@ public static class Program{
                                         
                                    
 - Regex -
+using System.Text.RegularExpressions;
+// \p{category} - In that Unicode category
+// category = Lu - Letter, uppercase
+// category = Ll - letter, lowercase
+// [0-9] = numbers
+// \W = non word character
+int countUpper = Regex.Matches(s, @"\p{Lu}").Count;
+int countLower = Regex.Matches(s, @"\p{Ll}").Count;
+int countNumber= Regex.Matches(s, @"[0-9]").Count;
+int countOther = Regex.Matches(s, @"\W").Count;
+                                        
+//Alternative
+s.Count(char.IsUpper),
+s.Count(char.IsLower),
+s.Count(char.IsDigit),
+s.Count(x => !char.IsLetterOrDigit(x))
+                                        
 //Check if string contains certain word, case insensitive
 public static bool SpeakEnglish(string sentence)=> Regex.IsMatch(sentence, "(?i)english");
                                         
