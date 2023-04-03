@@ -353,6 +353,14 @@ Enumerable.Range(start, count)...
 return string.Join("\n", Enumerable.Range(1, 10).Select(i => $"{i} * {number} = {i * number}"));
 //Skip element with loop                                        
 xs.Skip(1).Where((x, i) => x % (i + 1) == 0).ToList();
+                                        
+//To use OrderBy and Enumeral.Range together, you need to Zip 2 arrays together.
+    return a.OrderBy(n => n).Skip(a.Length / 2).Zip(a.OrderByDescending(n => n).Skip(a.Length / 2), (x, y) => x * y).Sum();
+
+//Enumeral.Range method
+a = a.OrderBy(x=>x).ToArray();
+        return Enumerable.Range(0,a.Length/2).Select((x,i) =>a[i]*a[a.Length-1-i]).Sum();
+                                        
 
 Repeat (int element, int count)
     public static int SequenceSum(int start, int end, int step) =>
