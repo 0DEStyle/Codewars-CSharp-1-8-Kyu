@@ -44,3 +44,55 @@ class Kata
 }
 
 //****************Sample Test*****************
+using System;
+using NUnit.Framework;
+using System.Linq;
+
+[TestFixture]
+class Tests
+{
+    [TestCase(2, 1, 2)]
+    [TestCase(22, 5, 4, 2, 3)]
+    [TestCase(342, 12, 6, 10, 26, 3, 24)]
+    [TestCase(74, 9, 2, 8, 7, 5, 4, 0, 6)]
+    public void BasicTests(int expected, params int[] a)
+    {
+        Assert.That(Kata.MinSum(a), Is.EqualTo(expected));
+    }
+    [Test]
+    public void EmptyInput()
+    {
+        var a = new int[] { };
+        Assert.That(Kata.MinSum(a), Is.EqualTo(0));
+    }
+
+    static Random rnd = new Random();
+
+    [Test]
+    public void RandomTests()
+    {
+        for (int i = 0; i < 100; i++)
+        {
+            var a = CreateArray();
+            var expected = SolutionMinSum(a);
+            Assert.That(Kata.MinSum(a), Is.EqualTo(expected));
+        }
+    }
+    int[] CreateArray()
+    {
+        var size = -1;
+        while (size % 2 != 0)
+            size = rnd.Next(1, 20);
+        return Enumerable.Range(0, size).Select(x => rnd.Next(1, 100)).ToArray();
+    }
+    int SolutionMinSum(int[] a, int sum = 0)
+    {
+        a = a.OrderBy(x => x).ToArray();
+        for (var i = 0; i < a.Length;)
+        {
+            sum += a[0] * a.Last();
+            a = a.Skip(1).Take(a.Length - 2).ToArray();
+        }
+        return sum;
+    }
+}
