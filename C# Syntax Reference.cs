@@ -86,6 +86,9 @@ $"{(r > 255 ? 255 : r < 0 ? 0 : r):X2}"
 //convert char array to int array
 .Select(a => a - '0')
 
+ //convert the character to ASCII and Concat it together.
+public static string Switcher(string[] x) => string.Concat(x.Select(n => "zyxwvutsrqponmlkjihgfedcba!? "[int.Parse(n) - 1]));
+
  - Print tricks -
  //get the length of a number by converting to string using interpolation
     return $"{n}".Length;
