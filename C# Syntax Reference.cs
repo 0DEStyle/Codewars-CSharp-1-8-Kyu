@@ -106,6 +106,11 @@ public static string Hello(string name) =>
     "Hello, World!" : 
     $"Hello, {CultureInfo.CurrentCulture.TextInfo.ToTitleCase(name.ToLower())}!";
 
+//Switch letter cases, upper to lower, lower to upper
+public static string alternateCase(string s) =>
+             string.Concat(s.Select(e => char.IsUpper(e) ? char.ToLower(e) : char.ToUpper(e)));
+
+
  String Interpolation
  return $"Congratulations! You're going to have a {sperm == "XY" ? "son" : "daughter"}.";
  return $"At match {t[0]} - {t[1]}, {(s[0] == s[1] ? "teams played draw." : t[s[0] > s[1] ? 0 : 1] + " won!")}";
