@@ -467,7 +467,24 @@ using System.Collections.Generic;
 IDictionary<string, int> weight = new Dictionary<string, int>();
 weight.Add(arr[i], sum);
                                         
-
+//switch case
+ public static string Boredom(Dictionary<string, string> staff){
+    var score = staff.Sum(x => x.Value switch
+    {
+        "accounts" => 1,
+        "finance" => 2,
+        "canteen" => 10,
+        "regulation" => 3,
+        "trading" => 6,
+        "change" => 6,
+        "IS" => 8,
+        "retail" => 5,
+        "cleaning" => 4,
+        "pissing about" => 25,
+        _ => 0
+    });
+ }
+   
 Dictionary example
 IDictionary<int, string> weight = new Dictionary<int, string>();
 var myDictionary = new Dictionary<int, string>()
