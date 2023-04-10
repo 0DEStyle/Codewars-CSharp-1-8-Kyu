@@ -546,3 +546,14 @@ public class God{
 public class Human {}
 public class Man : Human {}
 public class Woman : Human {}
+
+                                        
+                                        
+                                        
+                                         - Date and Time -
+                                        
+Seek 7 & 8 Kyu(272_ Unlucky Days.cs)
+//from month 1 to 12 (Jan to Dec)
+//select date 13, count the number of day equals to Friday
+//return the result
+  public static int UnluckyDays(int year) => Enumerable.Range(1, 12).Select(x => new DateTime(year, x, 13)).Count(x => x.DayOfWeek == DayOfWeek.Friday);
