@@ -253,6 +253,10 @@ n = 0  ==> [1]        # [2^0]
 n = 1  ==> [1, 2]     # [2^0, 2^1]
 n = 2  ==> [1, 2, 4]  # [2^0, 2^1, 2^2]
 
+//Join 2D array together and print it
+  public static string Crap(char[,] x)
+    string str = String.Join(" ", x.Cast<char>());
+    
 - Exception -
 using System;
  throw new ArgumentOutOfRangeException();
