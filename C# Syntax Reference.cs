@@ -335,6 +335,9 @@ public static int ExpressionsMatter(int a, int b, int c) => new[] { a+b+c, a+b*c
 Replace Repeated Character (seek 6 Kyu 014_Duplicate Encoder)
 public static string DuplicateEncode(string word)=> new string(word.ToLower() .Select(x => word.ToLower().Count(y => x == y) == 1 ? '(' : ')').ToArray());
 
+//Replace character to index order.
+public static string Vowel2Index(string str) => Regex.Replace(str, "[aeiou]", i => $"{i.Index + 1}");
+
 Linq Find stray number (seek 7 & 8 Kyu 051_Find the stray number)
 public static int Stray(int[] numbers) => numbers.Aggregate((a, b) => a ^ b);
 or
