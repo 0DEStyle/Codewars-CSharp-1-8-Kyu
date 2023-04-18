@@ -35,6 +35,29 @@ Note: This is a reference document that includes useful snippet of codes that pe
   
     public static string Oper(Func<string,string>fct, string s) => fct(s);
  
+
+//pass a bunch of function using a list
+//example
+public static void Function()
+        {
+            RollDice();
+            Move();
+            Combat();
+            GetCoins();
+            BuyHealth();    
+            PrintStatus();
+        }
+
+//solution 1
+ public static void PlayTurn(){
+    Log = new List<string> { "RollDice", "Move", "Combat", "GetCoins", "BuyHealth", "PrintStatus" };
+  }
+//solution 2
+public static void PlayTurn()
+  {
+    Log = "RollDice Move Combat GetCoins BuyHealth PrintStatus".Split().ToList();
+  }
+
 - return bool -
  The expression below return value of true/false based on the program(2 ways).
  return str2.Length == 0;
