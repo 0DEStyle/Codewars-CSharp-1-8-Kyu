@@ -119,6 +119,11 @@ public static string Switcher(string[] x) => string.Concat(x.Select(n => "zyxwvu
  //Linq return or print certain length of characters
  return String.Join("", Enumerable.Repeat(character, text.Length));
 
+//Linq preset string
+        public static bool Validate_hello(string greetings)=>
+          new[] { "hello", "ciao", "salut", "hallo", "hola", "ahoj", "czesc" }.Any(x => greetings.ToLower().Contains(x));
+
+
  //check if string is null or empty
  public static string Hello(string name) => string.IsNullOrEmpty(name);
 
