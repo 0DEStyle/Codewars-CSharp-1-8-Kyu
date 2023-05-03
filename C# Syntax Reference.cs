@@ -177,6 +177,15 @@ int firstDigit = (int)(Value / Math.Pow(10, (int)Math.Floor(Math.Log10(Value))))
 
 
 - String Manuipulation - 
+                       
+//methods to join two Enumerables together
+return string.Concat(a.Where(x=>!b.Contains(x))) + string.Concat(b.Where(x=>!a.Contains(x)));
+//alt method
+return string.Concat(a.Where(x => !b.Contains(x)).Concat(b.Where(x => !a.Contains(x))));
+ 
+//find unique letters by replace letters 
+return Replace(a, $"[{b}]", "") + Replace(b, $"[{a}]", "");
+                       
 //Select a pattern, separate with string by 8 character, commonly used in reversing bits.
 Enumerable.Range(0, str.Length / 8).Select(i => str.Substring(i * 8, 8)).ToArray();
                        
