@@ -62,6 +62,13 @@ public static void PlayTurn()
  The expression below return value of true/false based on the program(2 ways).
  return str2.Length == 0;
 
+
+//count the number of args/arguments
+  public static int CountArgs(params object[] args) => args.Length;
+//method 2
+  public static int CountArgs(params dynamic[] args) => args.Length;
+
+
 //call different functions based on condition, one line
 public static void If(bool condition, Action func1, Action func2) => (condition ? func1 : func2)();
 
