@@ -184,6 +184,14 @@ int firstDigit = (int)(Value / Math.Pow(10, (int)Math.Floor(Math.Log10(Value))))
 
 
 - String Manuipulation - 
+//split string by size
+//seek 7 & 8 Kyu (298_Split In Parts.cs)
+    public static string SplitInParts(string s, int partLength){  
+        for(int i = partLength; i < s.Length; i += partLength + 1)
+            s = s.Insert(i, " ");
+        return s;    
+    }
+}  
                        
 //methods to join two Enumerables together
 return string.Concat(a.Where(x=>!b.Contains(x))) + string.Concat(b.Where(x=>!a.Contains(x)));
@@ -365,6 +373,10 @@ Example of how to set multiple conditions in a Lambda Expression (calculate BMI)
 public static string Bmi(double w, double h) => (w = w / h / h) > 30 ? "Obese" : w > 25 ? "Overweight" : w > 18.5 ? "Normal" : "Underweight";
 
 - Linq -
+                
+//using Chunk to split string into certain size
+public static string SplitInParts(string s, int partLength)=> string.Join(" ",s.Chunk(partLength).Select(c => string.Concat(c)));
+                
 //Join elements together with Aggregate instead of string.Join
 int[] data = new int[32] { 1, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 1, 0, 1, 0, 1, 0, 1, 0 };
 var str = data.Aggregate("",(i, j) => i + j);
