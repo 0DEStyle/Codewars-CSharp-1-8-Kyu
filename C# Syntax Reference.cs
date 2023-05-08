@@ -23,6 +23,14 @@ Note: This is a reference document that includes useful snippet of codes that pe
                 _ => "spades",
             };
 
+//weird if statment method
+//instead of doing
+    if (a == null) a = "";
+    if (b == null) b = "";
+//do this
+    a ??= "";
+    b ??= "";
+
 - Pass Function as argument -
 //definition Func<Type of function , Type of argument>
  //example
