@@ -27,7 +27,7 @@ Note: This is a reference document that includes useful snippet of codes that pe
 //instead of doing
     if (a == null) a = "";
     if (b == null) b = "";
-//do this
+//do this (null-coalescing operators)
     a ??= "";
     b ??= "";
 
