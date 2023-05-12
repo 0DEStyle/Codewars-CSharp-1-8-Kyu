@@ -155,6 +155,12 @@ public static string alternateCase(string s) =>
 
 
  String Interpolation
+ 
+ //format string to certain length (3 method)
+ return $"Value is {value.ToString().PadLeft(5, '0')}";  //00005 adding '0' to the left
+ return $"Value is {value:D5}";
+ return string.Format("Value is {0:00000}", value);
+ 
  return $"Congratulations! You're going to have a {sperm == "XY" ? "son" : "daughter"}.";
  return $"At match {t[0]} - {t[1]}, {(s[0] == s[1] ? "teams played draw." : t[s[0] > s[1] ? 0 : 1] + " won!")}";
 
