@@ -246,6 +246,11 @@ if(temp.EndsWith(' '))
  Remove ending character of a string
 temp = temp.TrimEnd();
 
+//replace the string num(convert to string using string interpolation) 
+//if character is equal to pattern 1,3,5,7,9, using the regex Lookahead operator ?= to check the next character
+//then return the string with $1 the number itself with the character '-'
+public static string InsertDash(int num) => Regex.Replace($"{num}", "([1,3,5,7,9])(?=[1,3,5,7,9])", "$1-");
+
 Remove character from string (seek 048_Remove exclamation marks)
 public static string RemoveExclamationMarks(string s) => Regex.Replace(s,@"!", "");
 or
