@@ -546,6 +546,15 @@ Check vowels exist in object array without using Regex, then convert ASCII code 
 
 - Dictionary - 
 using System.Collections.Generic;
+
+Hash table (Seek 7 & 8 Kyu 311_Building Strings From a Hash)
+
+public static string StringifyDict<TKey, TValue>(Dictionary<TKey, TValue> hash){
+    foreach(KeyValuePair<TKey, TValue> element in hash)
+            Console.WriteLine("Key:- {0} and Value:- {1}", element.Key, element.Value);
+    return string.Join(",", hash.Select(x => $"{x.Key} = {x.Value}"));
+  }
+
 IDictionary<string, int> weight = new Dictionary<string, int>();
 weight.Add(arr[i], sum);
                                         
