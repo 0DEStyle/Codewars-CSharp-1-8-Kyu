@@ -166,6 +166,10 @@ public static string alternateCase(string s) =>
 
  var str2 = new string('x', 7 + "*\n"; //out put : xxxxxxx*
  - Assigning -
+ 
+ //count the number of times x appear in xs, using Equals.
+ public static int NumberOfOccurrences(int x, int[] xs) => xs.Count(x.Equals);
+ 
 To assign 2 values in one line, instead of:
 newB = a + b;
 a = b;
