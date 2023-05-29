@@ -1,5 +1,7 @@
 Note: This is a reference document that includes useful snippet of codes that perform small tasks. It is constantly being updated as I learn.
-
+- Select number by order
+str.Select((c, i) => $"{c}"[i % $"{c}".Length]).ToArray();
+ 
 - Switch case -
  //using Lambda instead of ternary (Seek 7 & 8 Kyu Bartender, drinks!.cs)
   public static string GetDrinkByProfession(string p) => p.ToLower() switch
