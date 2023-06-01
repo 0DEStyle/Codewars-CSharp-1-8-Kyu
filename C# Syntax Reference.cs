@@ -507,6 +507,12 @@ public static class Program{
                                         
                                    
 - Regex -
+                                        
+//^ start of string, \z end of string
+//(?i) case insenstitive
+Regex.IsMatch(s,@"^(?i)[aeiou]\z");
+                                        
+                                        
 using System.Text.RegularExpressions;
 // \p{category} - In that Unicode category
 // category = Lu - Letter, uppercase
