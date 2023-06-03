@@ -104,6 +104,17 @@ BigInteger.Pow(2, x)
 //format double into decimal place with string interpolation
  //:f2 means 2 decimal places
  public static string Usdcny(int usd) => $"{(usd*6.75):f2} Chinese Yuan";
+//method 2
+return $"{(usd * 6.75f):0.00} Chinese Yuan";
+//method 3
+return string.Format("{0:0.00}", (usd * 6.75)) + " Chinese Yuan";
+//method 4
+return $"{usd * 6.75:.00 Chinese Yuan}";
+//method 5
+string res = y.ToString("F2");
+//method 6
+//https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/floating-point-numeric-types
+return $"{(decimal)usd * 6.75m} Chinese Yuan";
 
 - adding single digit in string without convert to int -
  //(Seek 6 Kyu 038_Reverse or rotate?)
