@@ -100,6 +100,10 @@ public static double? ParseF(object s = null) => double.TryParse(s?.ToString(), 
 //biginterger power
 using System.Numerics;
 BigInteger.Pow(2, x)
+ 
+//format double into decimal place with string interpolation
+ //:f2 means 2 decimal places
+ public static string Usdcny(int usd) => $"{(usd*6.75):f2} Chinese Yuan";
 
 - adding single digit in string without convert to int -
  //(Seek 6 Kyu 038_Reverse or rotate?)
