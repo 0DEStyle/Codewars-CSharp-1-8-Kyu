@@ -1,5 +1,6 @@
 # Codewars Challenges-
 ## C# Solutions
+![alt text](https://www.codewars.com/users/0DE/badges/micro?theme=light)<br />
 ⭐Date started: August 9, 2022
 
 ⭐This is a repository for Codewars C# challenge solutions. <br />
