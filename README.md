@@ -17,7 +17,8 @@ Test Frameworks NUnit <br />
 You're welcome to use the solutions as reference to solve the problem(some algorithms might not be optimal).<br />
 Link to Codewars Profile: https://www.codewars.com/users/0DE <br />
 
-⭐You can find challenge link and question at the start of the file,<br />
+⭐Just click into the folder and Ctrl + F to search for the Kata you need <br />
+You can find challenge link and question at the start of the file,<br />
 then solutions in the middle and test cases at the very end. <br />
 ![alt text](https://github.com/0DEStyle/Codewars-Challenges-/blob/main/Challenge%20Format.png)
 
