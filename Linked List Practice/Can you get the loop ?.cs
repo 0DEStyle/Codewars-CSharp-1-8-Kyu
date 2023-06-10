@@ -19,6 +19,10 @@ Don't miss dmitry's article in the discussion after you pass the Kata !!
 
 //***************Solution********************
 
+//https://en.wikipedia.org/wiki/Cycle_detection
+//using the Floyd's tortoise and hare algorithm to reduce time and memory complexity O(n)
+//https://www.youtube.com/watch?v=gBTe7lFR3vc
+
 public class Kata{
   public static int getLoopSize(LoopDetector.Node startNode){
     int nodeCount = 1; //it starts with 1 not 0
