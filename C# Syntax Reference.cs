@@ -675,3 +675,46 @@ Seek 7 & 8 Kyu(272_ Unlucky Days.cs)
 //select date 13, count the number of day equals to Friday
 //return the result
   public static int UnluckyDays(int year) => Enumerable.Range(1, 12).Select(x => new DateTime(year, x, 13)).Count(x => x.DayOfWeek == DayOfWeek.Friday);
+                                        
+                                        
+Seek 7 & 8 Kyu(Correct the time-string)
+//Check time format validation, store time format with regex, process with linq
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+public static class Time{
+  public static string Correct(string timeString){ 
+    
+    //check null or empty
+    if(string.IsNullOrEmpty(timeString)) return timeString;
+    
+    //format validation test
+    var str = Regex.Match(timeString, @"(\d{2}):(\d{2}):(\d{2})");
+    if(!str.Success) return null;
+    
+    //Time formatting, to second
+    DateTime d1 = new DateTime().AddSeconds(int.Parse(str.Groups[1].Value) * 3600 +
+                                            int.Parse(str.Groups[2].Value) * 60 +
+                                            int.Parse(str.Groups[3].Value));
+    
+    Console.WriteLine($"{d1.Hour:00}:{d1.Minute:00}:{d1.Second:00}");
+    return $"{d1.Hour:00}:{d1.Minute:00}:{d1.Second:00}";
+  }
+}
+                        
+//method 2
+using System;
+using System.Linq;
+using System.Text.RegularExpressions;
+
+public static class Time
+{
+  public static string Correct(string timeString)
+  {
+    if (string.IsNullOrEmpty(timeString)) return timeString;
+    if (!Regex.IsMatch(timeString, @"(\d{2}):(\d{2}):(\d{2})")) return null;
+    var t = timeString.Split(':').Select(int.Parse).ToArray();
+    return new TimeSpan(t[0], t[1], t[2]).ToString(@"hh\:mm\:ss");
+  }
+}
