@@ -718,3 +718,25 @@ public static class Time
     return new TimeSpan(t[0], t[1], t[2]).ToString(@"hh\:mm\:ss");
   }
 }
+
+//Clever solution to minimise code if statment, instead of writing  Convert.ToInt32() twice, use only once and perform condition check with
+the sign/calculation itself.
+                                        
+using System;
+public class Kata{
+  public static int HexToDec(string hexString) =>
+      hexString.Contains("-") ? 
+      Convert.ToInt32(hexString = hexString.Remove(0,1), 16) *-1 :
+      Convert.ToInt32(hexString, 16);
+}
+
+//better solution
+using System;
+
+public class Kata
+{
+    public static int HexToDec(string hexString)
+    {
+        return Convert.ToInt32(hexString.TrimStart('-'), 16) * (hexString[0] == '-' ? -1 : 1);
+    }
+}
