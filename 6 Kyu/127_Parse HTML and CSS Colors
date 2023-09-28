@@ -1,0 +1,212 @@
+/*Challenge link:https://www.codewars.com/kata/58b57ae2724e3c63df000006/train/csharp
+Question:
+In this kata you parse RGB colors represented by strings. The formats are primarily used in HTML and CSS. Your task is to implement a function which takes a color as a string and returns the parsed color as a map (see Examples).
+
+Input:
+The input string represents one of the following:
+
+6-digit hexadecimal - "#RRGGBB"
+e.g. "#012345", "#789abc", "#FFA077"
+Each pair of digits represents a value of the channel in hexadecimal: 00 to FF
+
+3-digit hexadecimal - "#RGB"
+e.g. "#012", "#aaa", "#F5A"
+Each digit represents a value 0 to F which translates to 2-digit hexadecimal: 0->00, 1->11, 2->22, and so on.
+
+Preset color name
+e.g. "red", "BLUE", "LimeGreen"
+You have to use the predefined map PRESET_COLORS (JavaScript, Python, Ruby), presetColors (Java, C#, Haskell), or preset-colors (Clojure). The keys are the names of preset colors in lower-case and the values are the corresponding colors in 6-digit hexadecimal (same as 1. "#RRGGBB").
+
+Examples:
+Parse("#80FFA0")   === new RGB(128, 255, 160))
+Parse("#3B7")      === new RGB( 51, 187, 119))
+Parse("LimeGreen") === new RGB( 50, 205,  50))
+
+// RGB struct is defined as follows:
+struct RGB
+{
+    public byte r, g, b;
+    public RGB(byte r, byte g, byte b);
+}
+*/
+
+//***************Solution********************
+using System.Drawing;
+using System.Collections.Generic;
+
+public class HtmlColorParser{
+  //create dictionary for preset colors
+    private readonly IDictionary<string, string> PresetColors;
+  
+  //function to set presetColors to pC
+    public HtmlColorParser(IDictionary<string, string> pC) => PresetColors = pC;
+
+    public RGB Parse(string c){
+      //if presetColors contains the lowercase for string c
+      //assign presetColors[c.ToLower] to c
+        if (PresetColors.ContainsKey(c.ToLower()))
+            c = PresetColors[c.ToLower()];
+      
+      //convert string c to html using ColorTranslator, store in result
+      //return RGB accordingly.
+        var result = ColorTranslator.FromHtml(c);
+        return new RGB(result.R, result.G, result.B);
+    }
+}
+//****************Sample Test*****************
+using System;
+using System.Collections.Generic;
+using NUnit.Framework;
+
+[TestFixture]
+public class T01impleHtmlColorParserTest : AssertionHelper
+{
+    private HtmlColorParser parser;
+
+    private void ShouldParse(string color, RGB expected)
+    {
+        Assert.AreEqual(expected, parser.Parse(color), $"input: \"{color}\"");
+    }
+
+    [SetUp]
+    public void Setup()
+    {
+        parser = new HtmlColorParser(PresetColors.Map);
+    }
+
+    [Test]
+    public void ExampleTests()
+    {
+        ShouldParse("#80FFA0", new RGB(128, 255, 160));
+        ShouldParse("#3B7", new RGB(51, 187, 119));
+        ShouldParse("LimeGreen", new RGB(50, 205, 50));
+    }
+
+    [Test]
+    public void SixDigitColorsTest()
+    {
+        ShouldParse("#000000", new RGB(0, 0, 0));
+        ShouldParse("#FFFFFF", new RGB(0xFF, 0xFF, 0xFF));
+        ShouldParse("#123456", new RGB(0x12, 0x34, 0x56));
+        ShouldParse("#789ABC", new RGB(0x78, 0x9A, 0xBC));
+        ShouldParse("#ABCDEF", new RGB(0xAB, 0xCD, 0xEF));
+        ShouldParse("#0F77A0", new RGB(0x0F, 0x77, 0xA0));
+    }
+
+    [Test]
+    public void ThreeDigitColorsTest()
+    {
+        ShouldParse("#000", new RGB(0, 0, 0));
+        ShouldParse("#FFF", new RGB(0xFF, 0xFF, 0xFF));
+        ShouldParse("#012", new RGB(0x00, 0x11, 0x22));
+        ShouldParse("#777", new RGB(0x77, 0x77, 0x77));
+        ShouldParse("#ABC", new RGB(0xAA, 0xBB, 0xCC));
+        ShouldParse("#DEF", new RGB(0xDD, 0xEE, 0xFF));
+    }
+
+    [Test]
+    public void PresetColorsTest()
+    {
+        ShouldParse("blue", new RGB(0, 0, 0xFF));
+        ShouldParse("Blue", new RGB(0, 0, 0xFF));
+        ShouldParse("bLuE", new RGB(0, 0, 0xFF));
+        ShouldParse("BLUE", new RGB(0, 0, 0xFF));
+        ShouldParse("RED", new RGB(0xFF, 0, 0));
+        ShouldParse("GREEN", new RGB(0, 0x80, 0));
+    }
+}
+
+
+[TestFixture]
+public class T02RandomHtmlColorParserTest : AssertionHelper
+{
+    private const int NUM_RANDOM_TEST_LOOPS = 100;
+
+    private HtmlColorParser parser;
+    private HtmlColorParserSolution parserSolution;
+    private Random random;
+
+    private void ShouldParseShuffled(string color)
+    {
+        color = ShuffleCase(color);
+        Assert.AreEqual(parserSolution.Parse(color), parser.Parse(color), $"input: \"{color}\"");
+    }
+
+    [SetUp]
+    public void Setup()
+    {
+        parser = new HtmlColorParser(PresetColors.Map);
+        parserSolution = new HtmlColorParserSolution(PresetColors.Map);
+        random = new Random();
+    }
+    
+    [Test]
+    public void RandomSixDigitColorsTest()
+    {
+        for (var i = 0; i < NUM_RANDOM_TEST_LOOPS; i++)
+        {
+            var value = random.Next(0xFFFFFF + 1);
+            var color = string.Format("#{0:X6}", value);
+            ShouldParseShuffled(color);
+        }
+    }
+
+    [Test]
+    public void RandomThreeDigitColorsTest()
+    {
+        for (var i = 0; i < NUM_RANDOM_TEST_LOOPS; i++)
+        {
+            var value = random.Next(0xFFF + 1);
+            var color = string.Format("#{0:X3}", value);
+            ShouldParseShuffled(color);
+        }
+    }
+
+    [Test]
+    public void AllPresetColorsTest()
+    {
+        foreach (var color in PresetColors.Map.Keys)
+        {
+            ShouldParseShuffled(color);
+        }
+    }
+
+    private string ShuffleCase(string str)
+    {
+        var result = "";
+        foreach (var c in str)
+        {
+            if (random.Next(2) == 1)
+                result += c.ToString().ToUpper();
+            else
+                result += c.ToString().ToLower();
+        }
+        return result;
+    }
+}
+
+class HtmlColorParserSolution
+{
+    private readonly IDictionary<string, string> presetColors;
+
+    public HtmlColorParserSolution(IDictionary<string, string> presetColors)
+    {
+        this.presetColors = presetColors;
+    }
+
+    public RGB Parse(string color)
+    {
+        color = color.ToLower();
+        string hex;
+
+        if (presetColors.ContainsKey(color))
+            hex = presetColors[color];
+        else if (color.Length == 4)
+            hex = string.Format("#{0}{0}{1}{1}{2}{2}", color[1], color[2], color[3]);
+        else
+            hex = color;
+
+        var n = Convert.ToInt32(hex.Substring(1), 16);
+        return new RGB((byte)((n >> 16) & 0xFF), (byte)((n >> 8) & 0xFF), (byte)(n & 0xFF));
+    }
+}
