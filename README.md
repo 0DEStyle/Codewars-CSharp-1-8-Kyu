@@ -7,7 +7,7 @@
 </div>
 
 
-⭐Date started: August 9, 2022
+⭐Date started: 9th August, 2022
 
 ⭐This is a repository for Codewars C# challenge solutions. <br />
 Versions 8.0 (.Net Core 3.1) <br />
