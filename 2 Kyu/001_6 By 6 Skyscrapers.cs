@@ -58,6 +58,7 @@ Each puzzle has only one possible solution
 */
 
 //***************Solution********************
+//note: solution timed out on 7x7
 using System;
 using System.Collections.Generic;
 using System.Linq;
