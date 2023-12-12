@@ -13,7 +13,7 @@
 Versions 8.0 (.Net Core 3.1) <br />
 Test Frameworks NUnit <br />
 
-⭐All solutions are programmed by ODEStyle, excluded Unit test.<br />
+⭐All solutions are programmed by 0DEStyle, excluded Unit test.<br />
 You're welcome to use the solutions as reference to solve the problem(some algorithms might not be optimal).<br />
 Link to Codewars Profile: https://www.codewars.com/users/0DE <br />
 
