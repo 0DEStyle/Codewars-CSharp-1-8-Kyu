@@ -9,12 +9,12 @@
 
 ⭐Date started: 9th August, 2022
 
-⭐This is a repository for Codewars C# challenge solutions. <br />
-Versions 8.0 (.Net Core 3.1) <br />
+⭐This is a repository for my Codewars C# challenge solutions. <br />
+Language Versions C# 10.0 .Net <br />
 Test Frameworks NUnit <br />
 
 ⭐All solutions are programmed by 0DEStyle, excluded Unit test.<br />
-You're welcome to use the solutions as reference to solve the problem(some algorithms might not be optimal).<br />
+You're welcome to use the solutions as reference to solve and learn the problem(highly suggest you don't just copy line by line), I often add comments to explain the statements as well as website reference for algorithm and documentation, though some algorithms might not be optimal.<br />
 Link to Codewars Profile: https://www.codewars.com/users/0DE <br />
 
 ⭐Just click into the folder and Ctrl + F to search for the Kata you need <br />
