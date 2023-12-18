@@ -10,7 +10,7 @@
 ⭐Date started: 9th August, 2022
 
 ⭐This is a repository for my Codewars C# challenge solutions. <br />
-Language Versions C# 10.0 .Net <br />
+Language Versions C# 8.0/ C# 10.0 .Net <br />
 Test Frameworks NUnit <br />
 
 ⭐All solutions are programmed by 0DEStyle, excluded Unit test.<br />
