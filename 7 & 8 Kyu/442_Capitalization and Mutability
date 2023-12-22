@@ -1,0 +1,78 @@
+/*Challenge link:https://www.codewars.com/kata/595970246c9b8fa0a8000086/train/csharp
+Question:
+Your coworker was supposed to write a simple helper function to capitalize a string (that contains a single word) before they went on vacation.
+
+Unfortunately, they have now left and the code they gave you doesn't work. Fix the helper function they wrote so that it works as intended (i.e. it must make the first character in the string upper case).
+
+The string will always start with a letter and will never be empty.
+
+Examples:
+
+"hello" --> "Hello"
+"Hello" --> "Hello" (the first letter was already capitalized)
+"a"     --> "A"
+*/
+
+//***************Solution********************
+
+//convert word to title case
+using System.Globalization;
+
+public class Kata{
+  public static string CapitalizeWord(string word) {
+    TextInfo str = new CultureInfo("en-US",false).TextInfo;
+    return str.ToTitleCase(word);
+  }
+}
+
+//solution 2
+using System;
+
+public class Kata
+{
+  public static String CapitalizeWord(String word)
+  {
+    return char.ToUpper(word[0]) + word.Substring(1);
+  }
+}
+
+//solution 3
+public class Kata
+{
+  public static string CapitalizeWord(string word)
+  {
+    return char.ToUpper(word[0]) + word[1..];
+  }
+}
+//****************Sample Test*****************
+namespace Solution {
+  using NUnit.Framework;
+  using System;
+
+  [TestFixture]
+  public class SolutionTest
+  {
+    private string RandomizerAlphabet = "abcdefghijkmnopqrstuvwxyz";
+    
+    [Test,Description("Basic Tests")]
+    public void BasicTest()
+    {
+      // Basic test cases
+      Assert.AreEqual("Word",      Kata.CapitalizeWord("word"));
+      Assert.AreEqual("I",         Kata.CapitalizeWord("i"));
+      Assert.AreEqual("Glasswear", Kata.CapitalizeWord("glasswear"));
+    }
+    
+    [Test,Description("Random Tests")]
+    public void RandomTest([Random(1, 10, 25)] int randomLength)
+    {
+      // Random test cases
+      string randomString = TestContext.CurrentContext.Random.GetString(randomLength, this.RandomizerAlphabet);
+      Assert.AreEqual(
+        char.ToUpper(randomString[0]) + randomString.Substring(1),
+        Kata.CapitalizeWord(randomString)
+      );
+    }
+    
+  }
+}
