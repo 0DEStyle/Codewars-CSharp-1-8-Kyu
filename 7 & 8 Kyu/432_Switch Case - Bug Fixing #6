@@ -1,0 +1,75 @@
+/*Challenge link:https://www.codewars.com/kata/55c933c115a8c426ac000082/train/csharp
+Question:
+Switch/Case - Bug Fixing #6
+Oh no! Timmy's evalObject function doesn't work. He uses Switch/Cases to evaluate the given properties of an object, can you fix timmy's function?
+*/
+
+//***************Solution********************
+//added break to end of each case.
+using System;
+
+public class Kata
+{
+  public static double EvalObject(double value1, double value2, char operation)
+  {
+    double result = 0;
+    switch(operation){
+      case '+': result = value1 + value2; break;
+      case '-': result = value1 - value2; break;
+      case '/': result = value1 / value2; break;
+      case '*': result = value1 * value2; break;
+      case '%': result = value1 % value2; break;
+      case '^': result = Math.Pow(value1, value2); break;
+    }
+    return result;
+  }
+}
+
+//****************Sample Test*****************
+using System;
+using NUnit.Framework;
+
+[TestFixture]
+public class Tests
+{
+  [Test]
+  public static void FixedTest()
+  {
+    Assert.AreEqual(2, Kata.EvalObject(1, 1, '+'));
+    Assert.AreEqual(0, Kata.EvalObject(1, 1, '-'));
+    Assert.AreEqual(1, Kata.EvalObject(1, 1, '/'));
+    Assert.AreEqual(1, Kata.EvalObject(1, 1, '*'));
+    Assert.AreEqual(0, Kata.EvalObject(1, 1, '%'));
+    Assert.AreEqual(1, Kata.EvalObject(1, 1, '^'));
+    Assert.AreEqual(0, Kata.EvalObject(1, 1, 'A'));
+  }
+  
+  [Test]
+  public static void RandomTest()
+ {
+   Random r = new Random();
+   char[] operations = new char[]{ '+', '-', '/', '*', '%', '^' };
+   for(int i = 0; i < 100; i++)
+   {
+     double val1 = r.Next(10000)+1;
+     double val2 = r.Next(10000)+1;
+     char op = operations[r.Next(6)];
+     Assert.AreEqual(Solution(val1, val2, op), Kata.EvalObject(val1, val2, op));
+   }
+ }
+ 
+ public static double Solution(double value1, double value2, char operation)
+  {
+    double result = 0;
+    switch(operation)
+    {
+      case '+': result = value1 + value2; break;
+      case '-': result = value1 - value2; break;
+      case '/': result = value1 / value2; break;
+      case '*': result = value1 * value2; break;
+      case '%': result = value1 % value2; break;
+      case '^': result = Math.Pow(value1, value2); break;
+    }
+    return result;
+  }
+}
