@@ -7,6 +7,10 @@
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/45041e4767bb0b6598f0745c015f40a169ebd875">**Product of Largest Pair**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/07983c6dbdc7f99db4d7c9ed61e37e49a4b9fe34">**Suzuki needs help lining up his students!**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/26bd8e891f74fe9d055b39c130b47f5e4f66e1a3">**Bubblesort Once**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/93d2729954a9ba3959fb9d390ac873b84b7461a2">**Simple Fun #88: Sort By Height**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/3274ab12dcb491224fbe9f9c6238533c5599c4fa">**Sort an array by value and index**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/8371ec9659a84dacc9c98ddcbdbf0f1c2e2d9289">**Sort and Transform**</a><br>
+
 <!-- Template
-<a href=" ">****</a><br>
+<a href="">****</a><br>
  -->
