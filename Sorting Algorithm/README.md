@@ -11,6 +11,11 @@
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/3274ab12dcb491224fbe9f9c6238533c5599c4fa">**Sort an array by value and index**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/8371ec9659a84dacc9c98ddcbdbf0f1c2e2d9289">**Sort and Transform**</a><br>
 
+
+## 6 Kyu
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/ba242e8eec0c8c558924bc62b709d6e22151fc79">**Garble Sort**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/629dc02c3182150a25b9634cfa69cdb3878f8fcd">**Sorting the Rabbit Hole**</a><br>
+
 <!-- Template
 <a href="">****</a><br>
  -->
