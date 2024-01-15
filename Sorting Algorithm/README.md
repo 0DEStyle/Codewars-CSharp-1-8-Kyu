@@ -15,6 +15,10 @@
 ## 6 Kyu
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/ba242e8eec0c8c558924bc62b709d6e22151fc79">**Garble Sort**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/629dc02c3182150a25b9634cfa69cdb3878f8fcd">**Sorting the Rabbit Hole**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/d488f94078b88ecf8fc1b428b129fc50ad8ddfee">**Digit Difference Sort**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/d043d8fefcda12ca7fa1d4d75e68d823e232f9ab">**Sorting Book Titles: Ignoring Articles**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/d9aa318be6937e018901c63f487f15557aff5e94">**Sortable Shapes**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/commit/cb8c15b6c47b60f88fb78cd14562ca622a1262f6">**"com", "gov", "org" first**</a><br>
 
 <!-- Template
 <a href="">****</a><br>
