@@ -19,6 +19,7 @@
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/160_Sorting%20Book%20Titles%3A%20Ignoring%20Articles.cs">**Sorting Book Titles: Ignoring Articles**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/161_Sortable%20Shapes.cs">**Sortable Shapes**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/162_%22com%22%2C%20%22gov%22%2C%20%22org%22%20first.cs">**"com", "gov", "org" first**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/163_%20Wave%20Sorting.cs">**Wave Sorting**</a><br>
 
 <!-- Template
 <a href="">****</a><br>
