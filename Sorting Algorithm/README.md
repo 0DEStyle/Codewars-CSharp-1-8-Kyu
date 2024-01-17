@@ -26,6 +26,13 @@
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/167_Rank%20Vector.cs">**Rank Vector**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/168_Prize%20Draw.cs">**Prize Draw**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/169_Required%20Data%20I.cs">**Required Data I**</a><br>
+
+## 5 Kyu
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/090_%20Numbers%20that%20are%20a%20power%20of%20their%20sum%20of%20digits.cs">**Numbers that are a power of their sum of digits**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/091_Prime%20Sextuplets.cs">**Prime Sextuplets**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/092_Sorting%20Poker.cs">**Sorting Poker**</a><br>
+
+
 <!-- Template
 <a href="">****</a><br>
  -->
