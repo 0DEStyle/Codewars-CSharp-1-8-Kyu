@@ -23,8 +23,9 @@
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/164_Flip%20Your%20Stack%20(of%20Pancakes).cs">**Flip Your Stack (of Pancakes)**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/165_%20Multiples%20of%20Ten%20in%20a%20Sequence%20Which%20Values%20Climb%20Up.cs">**Multiples of Ten in a Sequence Which Values Climb Up**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/166_%20Sort%20the%20columns%20of%20a%20csv-file.cs">**Sort the columns of a csv-file**</a><br>
-
-
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/167_Rank%20Vector.cs">**Rank Vector**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/168_Prize%20Draw.cs">**Prize Draw**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/169_Required%20Data%20I.cs">**Required Data I**</a><br>
 <!-- Template
 <a href="">****</a><br>
  -->
