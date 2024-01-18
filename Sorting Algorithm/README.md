@@ -31,7 +31,12 @@
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/090_%20Numbers%20that%20are%20a%20power%20of%20their%20sum%20of%20digits.cs">**Numbers that are a power of their sum of digits**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/091_Prime%20Sextuplets.cs">**Prime Sextuplets**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/092_Sorting%20Poker.cs">**Sorting Poker**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/093_Closest%20and%20Smallest.cs">**Closest and Smallest**</a><br>
 
+## 4 Kyu
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/4%20Kyu/049_Permutational%20Primes.cs">**Permutational Primes**</a><br>
+<a href="">****</a><br>
+<a href="">****</a><br>
 
 <!-- Template
 <a href="">****</a><br>
