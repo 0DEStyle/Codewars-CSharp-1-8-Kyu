@@ -1,4 +1,5 @@
-## Sorting Algorithm Problems 7 Kyu
+## Sorting Algorithm Problems 
+## 7 Kyu
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/7%20%26%208%20Kyu/530_My%20Language%20Skills.cs">**My Language Skills**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/7%20%26%208%20Kyu/531_%20Sort%20Out%20The%20Men%20From%20Boys.cs">**Sort Out The Men From Boys**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/7%20%26%208%20Kyu/532_Sorted%3F%20yes%3F%20no%3F%20how%3F.cs">**Sorted? yes? no? how?**</a><br>
@@ -35,8 +36,8 @@
 
 ## 4 Kyu
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/4%20Kyu/049_Permutational%20Primes.cs">**Permutational Primes**</a><br>
-<a href="">****</a><br>
-<a href="">****</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/4%20Kyu/050_Select%20median.cs">**Select median**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/4%20Kyu/051_Sortable%20Poker%20Hands.cs">**Sortable Poker Hands**</a><br>
 
 <!-- Template
 <a href="">****</a><br>
