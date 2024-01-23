@@ -27,14 +27,24 @@
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/167_Rank%20Vector.cs">**Rank Vector**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/168_Prize%20Draw.cs">**Prize Draw**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/169_Required%20Data%20I.cs">**Required Data I**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/144_Sorting%20on%20planet%20Twisted-3-7.cs">**Sorting on planet Twisted-3-7**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/026_%20Sort%20the%20odd(array).cs">**Sort the odd**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/134_Sort%20My%20Animals.cs">**Sort My Animals**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/141_Sorting%20by%20bits.cs">**Sorting by bits**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/106_Difference%20of%202.cs">**Difference of 2**</a><br>
 
 ## 5 Kyu
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/062_Sort%20-%20one%2C%20three%2C%20two.cs">**Sort - one, three, two**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/003_Moving%20Zeros%20To%20The%20End(array).cs">**Moving Zeros To The End**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/057_Don't%20Drink%20the%20Water.cs">**Don't Drink the Water**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/090_%20Numbers%20that%20are%20a%20power%20of%20their%20sum%20of%20digits.cs">**Numbers that are a power of their sum of digits**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/091_Prime%20Sextuplets.cs">**Prime Sextuplets**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/092_Sorting%20Poker.cs">**Sorting Poker**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/093_Closest%20and%20Smallest.cs">**Closest and Smallest**</a><br>
 
 ## 4 Kyu
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/4%20Kyu/030_Sort%20binary%20tree%20by%20levels.cs">**Sort binary tree by levels**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/4%20Kyu/019_Simple%20Fun%20%23148%3A%20Exchange%20Sort.cs">**Simple Fun #148: Exchange Sort**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/4%20Kyu/049_Permutational%20Primes.cs">**Permutational Primes**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/4%20Kyu/050_Select%20median.cs">**Select median**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/4%20Kyu/051_Sortable%20Poker%20Hands.cs">**Sortable Poker Hands**</a><br>
