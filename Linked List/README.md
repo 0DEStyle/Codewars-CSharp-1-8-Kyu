@@ -7,6 +7,7 @@
 ## 6Kyu
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/047_Linked%20Lists%20-%20Insert%20Nth%20Node.cs">**Linked Lists - Insert Nth Node**</a><br>
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/046_%20Linked%20Lists%20-%20Length%20%26%20Count(Node).cs">**Linked Lists - Length & Count(Node)**</a><br>
+<a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/6%20Kyu/172_%20Parse%20a%20linked%20list%20from%20a%20string.cs">**Parse a linked list from a string**</a><br>
 
 ## 5 Kyu
 <a href="https://github.com/0DEStyle/Codewars-CSharp-2-8-Kyu/blob/main/5%20Kyu/027_Can%20you%20get%20the%20loop%20%3F.cs">**Can you get the loop ?**</a><br>
