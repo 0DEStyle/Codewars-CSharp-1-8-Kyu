@@ -14,7 +14,8 @@ Language Versions C# 8.0/ C# 10.0 .Net <br />
 Test Framework NUnit <br />
 
 ⭐All solutions are programmed by 0DEStyle, excluded Unit test.<br />
-You're welcome to use the solutions as reference to solve and learn the problem (**Highly suggest you don't just copy line by line**), I often add comments to explain the statements as well as website reference for algorithm and documentation, though some algorithms might not be optimal.<br />
+### **$${\color{red}**Highly\space suggest\space you\space don't\space just\space copy\space the\space solution\space line\space by\space line!!**}$$** 
+You're welcome to use the solutions as reference to solve and learn the problem, I often add comments to explain the statements as well as website reference for algorithm and documentation, though some algorithms might not be optimal.<br />
 Link to Codewars Profile: https://www.codewars.com/users/0DE <br />
 
 ⭐Just click into the **Kyu** folder and **Ctrl + F** to search for the Kata you need <br />
