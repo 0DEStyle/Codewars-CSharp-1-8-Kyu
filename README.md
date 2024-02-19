@@ -18,7 +18,8 @@ Test Framework NUnit <br />
 You're welcome to use the solutions as reference to solve and learn the problem, I often add comments to explain the statements as well as website reference for algorithm and documentation, though some algorithms might not be optimal.<br />
 Link to Codewars Profile: https://www.codewars.com/users/0DE <br />
 
-⭐Just click into the **Kyu** folder and **Ctrl + F** to search for the Kata you need <br />
+⭐How to use<br />
+Just click into the **Kyu** folder and **Ctrl + F** to search for the Kata Name you need <br />
 You can find challenge link and question at the start of the file,<br />
 then solutions in the middle and test cases at the very end. <br />
 ![alt text](https://github.com/0DEStyle/Codewars-Challenges-/blob/main/Challenge%20Format.png)
@@ -28,8 +29,8 @@ System.Linq <br />
 System.Collections.Generic <br />
 System.Text.RegularExpressions <br />
 System.Globalization <br />
+System.Numerics <br />
 NUnit.Framework <br />
-
 
 ## Documentation Links
 1.Linq: https://docs.microsoft.com/en-us/dotnet/api/system.linq.enumerable?view=net-6.0 <br />
