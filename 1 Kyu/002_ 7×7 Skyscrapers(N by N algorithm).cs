@@ -70,31 +70,31 @@ find singled out, normal sudoku cancel
   11,10,9,8
   
 7x7 index
-			      	//N
-       0, 1, 2, 3, 4, 5, 6,  
-	   27					            7 
-	   26				 	            8
-	   25					            9
-//W  24					            10 //E
-	   23					            11
-	   22					            12
-	   21					            13
-		   20,19,18,17,16,15,14   
-			      	//S
+		//N
+        0, 1, 2, 3, 4, 5, 6,  
+      27		    7 
+      26		    8
+      25		    9
+//W   24		    10 //E
+      23	            11
+      22		    12
+      21		    13
+	20,19,18,17,16,15,14   
+		//S
               
 7x7 clues by index
 clues[28]:
-				    //N
+	    //N
      7, 0, 0, 0, 2, 2, 3,  
-		4					            0 
-		0				 	            0
-		5					            3
-//W	0					            0 //E
-		0					            0
-		0					            0
-		0					            0
-		  0, 5, 0, 0, 3, 0, 3   
-				    //S
+    4			 0 
+    0			 0
+    5		         3
+//W 0			 0 //E
+    0			 0
+    0			 0
+    0			 0
+     0, 5, 0, 0, 3, 0, 3   
+	  //S
 
       This is the formula to solve N x N!
       we want to find the right index for each column and row, see 7x7 index, 
