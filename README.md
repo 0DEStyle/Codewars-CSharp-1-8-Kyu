@@ -1,13 +1,15 @@
 <h1 align="center">CodeWars Kata Solutions C# (C Sharp)</h1>
 
 <div align="center"> 
-<img width="90%" height="90%" src="https://github.com/0DEStyle/Codewars-CSharp/blob/main/logo-codewars.png" hspace="20">
+<img width="90%" height="90%" src="https://github.com/0DEStyle/Codewars-CSharp-1-8-Kyu/blob/main/images/logo-codewars.png" hspace="20">
   
 [![](https://www.codewars.com/users/0DE/badges/large)](https://www.codewars.com/users/0DE)
 </div>
 
 
-⭐Date started: 9th August, 2022
+⭐Date started: 9th August, 2022 <br />
+⭐Date reached 1000th Katas: 4th March, 2024 (573 days)<br />
+<img width="90%" height="90%" src="https://github.com/0DEStyle/Codewars-CSharp-1-8-Kyu/blob/main/images/codewars1000.png" hspace="20">
 
 ⭐This is a repository for my Codewars C# challenge solutions. <br />
 Language Versions C# 8.0/ C# 10.0 .Net <br />
@@ -22,7 +24,7 @@ Link to Codewars Profile: https://www.codewars.com/users/0DE <br />
 Just click into the **Kyu** folder and **Ctrl + F** to search for the Kata Name you need <br />
 You can find challenge link and question at the start of the file,<br />
 then solutions in the middle and test cases at the very end. <br />
-![alt text](https://github.com/0DEStyle/Codewars-Challenges-/blob/main/Challenge%20Format.png)
+![alt text](https://github.com/0DEStyle/Codewars-CSharp-1-8-Kyu/blob/main/images/Challenge%20Format.png)
 
 ## Commonly used Class Libraries:
 System.Linq <br />
